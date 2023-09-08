@@ -1,10 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+<!--Username: delldell-->
+<!--Pwd: Password@123-->
+
+<!-- Frmo vscode -->
+
+{% block content %}
+    <div class="container">
+        <h1>Student Details</h1>
+        <h2>{{user.username}}</h2>
+        <h2>{{user.email}}</h2>
+    </div>
+    <section class="appointment-history">
+        <h2>Appointment History</h2>
+        <!-- Dropdown menu -->
+        <div class="dropdown">
+            <select class="btn btn-secondary" id="appointmentDropdown">
+                <option>Select an Appointment</option>
+            </select>
+        </div>
+    </section>
+
+    <script>
+        // Sample appointment data
+        const appointments = [
+            { type: "Upcoming", consultant: "Andrew Leonard", date: "August 25, 2023", time: "10:00 AM" },
+            { type: "Past", consultant: "Consultant B", date: "August 15, 2023", time: "2:00 PM" }
+            // Add more appointments here
+        ];
+
+        // Populate the dropdown
+        const dropdown = document.getElementById("appointmentDropdown");
+        for (const appointment of appointments) {
+            const option = document.createElement("option");
+            option.textContent = `${appointment.type} Appointment: ${appointment.consultant}, Date: ${appointment.date}, Time: ${appointment.time}`;
+            dropdown.appendChild(option);
+        }
+    </script>
 </body>
 </html>
+
+
+<section class="consultant-ratings">
+    <h2>Consultant Ratings and Reviews</h2>
+    <!-- Display consultant ratings and reviews -->
+    <div class="Consultant Ratins and Reviews">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Consultant Ratings and Reviews
+        </button>
+        <ul class=" Consultant Ratings and Reviews-menu  Consultant Ratings and Reviews-menu-dark">
+          <li><a class="dropdown-item" href="#">Andrew Leonard - Rated 4.5 stars, "Very helpful and informative."</a></li>
+          <li><a class="dropdown-item" href="#">Gopal Bhattarai - Rated 5 stars, "Excellent guidance!"</a></li>
+        </ul>
+      </div>
+
+</section>
+
+<section class="communication-history" onclick="toggleConversationList()">
+    <h2>Communication History</h2>
+</section>
+
+<ul class="conversation-list">
+    <li class="list-group-item">Conversation with Consultant A - August 22, 2023, 3:15 PM</li>
+    <li class="list-group-item">Conversation with Consultant B - August 10, 2023, 10:30 AM</li>
+    <li class="list-group-item">Conversation with Consultant C - September 5, 2023, 2:00 PM</li>
+    <li class="list-group-item">Conversation with Consultant D - July 18, 2023, 4:45 PM</li>
+</ul>
+
+<script>
+    function toggleConversationList() {
+        var conversationList = document.querySelector('.conversation-list');
+        conversationList.style.display = (conversationList.style.display === 'block') ? 'none' : 'block';
+    }
+</script>
+
+<section class="notification-preferences">
+    <h2>Notification Preferences</h2>
+    <!-- Manage notification settings -->
+    <p>Receive email reminders for upcoming appointments:
+        <label><input type="radio" name="notification" value="yes"> Yes</label>
+        <label><input type="radio" name="notification" value="no"> No</label>
+    </p>
+</section>
+
+<section class="settings">
+    <h2>Account Settings</h2>
+    <!-- Manage account settings -->
+    <p>Change Password | Update Email | Security Settings</p>
+    <!-- Add more settings options here -->
+</section>
+
+<section class="additional-information">
+    <h2>Additional Information</h2>
+    <!-- Display optional additional information -->
+    <p>Educational Background: Bachelor's in Information Technology</p>
+    <p>Educational Background: Diploma of Information Technology </p>
+    <!-- Add more information here -->
+</section>
+
+
+
+{% endblock %}
