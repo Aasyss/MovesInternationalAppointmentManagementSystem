@@ -59,3 +59,6 @@ def consultant_details(request):
 def consultant_submit_details(request):
     # Handle form submission and details saving if needed
     return render(request, 'users/consultant_submit_details.html')
+
+def about_us(request):
+    return  render(request, 'users/about_us.html')
