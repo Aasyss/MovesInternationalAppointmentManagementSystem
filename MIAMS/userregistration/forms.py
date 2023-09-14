@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from .models import UserProfile, Certificate
 
 STATES = (
     ('', 'Choose...'),
@@ -22,6 +23,8 @@ ROLE_CHOICES = (
 
 
 class UserRegisterForm(UserCreationForm):
+    # Add a hidden field to store the consultant's ID
+
     username = forms.CharField(widget=forms.TextInput(
         attrs={
             'type': 'username',
@@ -78,9 +81,13 @@ class UserRegisterForm(UserCreationForm):
         fields = ['username','email','first_name','last_name','password1','password2','role', 'address_1', 'address_2', 'city', 'state', 'zip_code', 'check_me_out']
 
 
-class ConsultantDetailsForm(forms.Form):
-    full_name = forms.CharField(label='Full Name')
-    phone_number = forms.CharField(label='Phone Number')
+class ConsultantDetailsForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['profile_picture', 'bio', 'cv', 'date_of_birth', 'education_history', 'expertise']
 
-    field1 = forms.CharField(label='Field 1')
-    field2 = forms.CharField(label='Field 2')
+class CertificateForm(forms.ModelForm):
+    class Meta:
+        model = Certificate
+        fields = ['certificate_file']
+

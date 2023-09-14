@@ -4,8 +4,14 @@
 
 
 {% block content %}
-    <div class="container">
-        <h2>{{user.username}}</h2>
-    <h2>{{user.email}}</h2>
-    </div>
+    <h1>User Profile</h1>
+
+  <p>Username: {{ user_profile.user.username }}</p>
+  <p>Email: {{ user_profile.user.email }}</p>
+  <p>First Name: {{ user_profile.user.first_name }}</p>
+  <p>Last Name: {{ user_profile.user.last_name }}</p>
+<p>Picture: <img src="{{ user_profile.user.profile_picture }}" alt="Profile Picture"></p>
+  <!-- Add other fields as needed -->
+
+  <a href="{% url 'profile' %}">Edit Profile</a>
 {% endblock %}

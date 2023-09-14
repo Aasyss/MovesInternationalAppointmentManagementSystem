@@ -1,0 +1,9 @@
+{% extends 'appointment_management/base.html' %}
+
+{% block content %}
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Here, you can manage your appointments and availability.</p>
+    
+    <!-- Link to Availability Setup Page -->
+    <a href="{% url 'set_availability' %}">Set Availability</a>
+{% endblock %}

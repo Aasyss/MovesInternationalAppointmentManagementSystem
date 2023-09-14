@@ -1,0 +1,242 @@
+{% extends 'appointment_management/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h2>Set Availability</h2>
+
+  <form method="post">
+    {% csrf_token %}
+
+    Start Date:
+    <input type="text" class="form-control datepicker" name="start_date" id="datepicker" value="{{ form.start_date.value|default:'' }}"><br><br>
+
+      <h3>Monday</h3>
+        <div class="form-group">
+          <label for="monday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="monday_start_time"
+              class="form-control"
+              value="{{ form.monday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="monday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="monday_end_time"
+              class="form-control"
+              value="{{ form.monday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <h3>Tuesday</h3>
+        <div class="form-group">
+          <label for="tuesday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="tuesday_start_time"
+              class="form-control"
+              value="{{ form.tuesday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tuesday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="tuesday_end_time"
+              class="form-control"
+              value="{{ form.tuesday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <h3>Wednesday</h3>
+        <div class="form-group">
+          <label for="wednesday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="wednesday_start_time"
+              class="form-control"
+              value="{{ form.wednesday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="wednesday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="wednesday_end_time"
+              class="form-control"
+              value="{{ form.wednesday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <h3>Thursday</h3>
+        <div class="form-group">
+          <label for="thursday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="thursday_start_time"
+              class="form-control"
+              value="{{ form.thursday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="thursday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="thursday_end_time"
+              class="form-control"
+              value="{{ form.thursday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <h3>Friday</h3>
+        <div class="form-group">
+          <label for="friday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="friday_start_time"
+              class="form-control"
+              value="{{ form.friday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="friday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="friday_end_time"
+              class="form-control"
+              value="{{ form.friday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <h3>Saturday</h3>
+        <div class="form-group">
+          <label for="saturday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="saturday_start_time"
+              class="form-control"
+              value="{{ form.saturday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="saturday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="saturday_end_time"
+              class="form-control"
+              value="{{ form.saturday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+        <h3>Sunday</h3>
+        <div class="form-group">
+          <label for="sunday_start_time">Start Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="sunday_start_time"
+              class="form-control"
+              value="{{ form.sunday_start_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sunday_end_time">End Time:</label>
+          <div class="input-group clockpicker">
+            <input
+              type="time"
+              name="sunday_end_time"
+              class="form-control"
+              value="{{ form.sunday_end_time.value|default:'' }}"
+            >
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-time"></span>
+            </span>
+          </div>
+        </div>
+
+    <button type="submit" class="btn btn-primary">Save Availability</button>
+  </form>
+</div>
+  <script>
+    // Initialize Bootstrap Datepicker
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true
+    });
+
+    // Initialize Clockpicker
+    $('.clockpicker input').clockpicker({
+      autoclose: true,
+      twelvehour: false,
+      donetext: 'Done'
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+    <h2>Consultants List</h2>
+
+
+
+    <form method="GET">
+        <label for="expertise">Filter by Expertise:</label>
+        <select name="expertise" id="expertise">
+            <option value="" {% if selected_expertise == 'All' %}selected{% endif %}>All</option>
+            <option value="Visa Counselor" {% if selected_expertise == 'Visa Counselor' %}selected{% endif %}>Visa Counselor</option>
+            <option value="Career Counselor" {% if selected_expertise == 'Career Counselor' %}selected{% endif %}>Career Counselor</option>
+            <option value="Migration Counselor" {% if selected_expertise == 'Migration Counselor' %}selected{% endif %}>Migration Counselor</option>
+            <option value="Stress Counselor" {% if selected_expertise == 'Stress Counselor' %}selected{% endif %}>Stress Counselor</option>
+            {% for choice in EXPERTISE_CHOICES %}
+                <option value="{{ choice.0 }}" {% if selected_expertise == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <ul>
+        {% for consultant in consultants %}
+            <li>
+                {{ consultant.user.username }} - {{ consultant.expertise }}
+                <a href="{% url 'view_consultant_details' consultant.id %}">View Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

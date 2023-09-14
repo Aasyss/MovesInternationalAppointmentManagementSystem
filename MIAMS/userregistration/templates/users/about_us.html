@@ -1,0 +1,25 @@
+<!-- about_us.html -->
+{% extends 'users/base.html' %}
+{% load social_share %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class=" share-icons social-sharing">
+        <h3>Share about us:</h3>
+<!--        <div class="facebook-this">-->
+<!--            <a class="btn-social fa fa-facebook btn-facebook" href="{{ facebook_url }}" target="_blank">facebook</a>-->
+<!--        </div>-->
+<!--        -->
+<!--        <div class="tweet-this">-->
+<!--            <a class="btn-social fa fa-twitter btn-twitter" href="{{ tweet_url }}" class="meta-act-link meta-tweet">{{link_text}}</a>-->
+<!--        </div>-->
+<!--        {% load i18n social_share %}{% get_current_language as LANGUAGE_CODE %}-->
+<!--        <div class="linkedin-this {{link_class}}">-->
+<!--          <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: {{ LANGUAGE_CODE|linkedin_locale }}</script>-->
+<!--          <script type="IN/Share" data-url="{{ linkedin_url }}"></script>-->
+<!--        </div>-->
+        <div class="sharethis-inline-share-buttons"></div>
+    </div>
+
+{% endblock %}

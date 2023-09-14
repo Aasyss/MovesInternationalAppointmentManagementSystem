@@ -1,0 +1,45 @@
+{% extends 'student/base.html' %}
+
+{% block content %}
+  <h2>{{ consultant.user.username }}</h2>
+  <h2>{{ consultant.user.get_full_name }}</h2>
+  <p>Expertise: {{ consultant.expertise }}</p>
+  <p>Bio: {{ consultant.bio }}</p>
+  <p>Date of Birth: {{ consultant.date_of_birth }}</p>
+  <p>Education History: {{ consultant.education_history }}</p>
+  <p>Profile Picture:</p>
+  <img src="{{ consultant.profile_picture.url }}" alt="{{ consultant.user.username }}'s Profile Picture">
+
+
+  <h3>Availabilities</h3>
+    <ul>
+      {% for availability in availabilities %}
+      <li>
+        Start Date: {{ availability.start_date }}<br>
+        </li>
+      <li>
+          Monday: {{ availability.monday_start_time }} - {{ availability.monday_end_time }}<br>
+        </li>
+        <li>
+          Tuesday: {{ availability.tuesday_start_time }} - {{ availability.tuesday_end_time }}<br>
+        </li>
+        <li>
+          Wednesday: {{ availability.wednesday_start_time }} - {{ availability.wednesday_end_time }}<br>
+        </li>
+        <li>
+          Thursday: {{ availability.thursday_start_time }} - {{ availability.thursday_end_time }}<br>
+        </li>
+        <li>
+          Friday: {{ availability.friday_start_time }} - {{ availability.friday_end_time }}<br>
+        </li>
+        <li>
+          Saturday: {{ availability.saturday_start_time }} - {{ availability.saturday_end_time }}<br>
+        </li>
+        <li>
+          Sunday: {{ availability.sunday_start_time }} - {{ availability.sunday_end_time }}<br>
+        </li>
+
+      </li>
+      {% endfor %}
+    </ul>
+{% endblock %}

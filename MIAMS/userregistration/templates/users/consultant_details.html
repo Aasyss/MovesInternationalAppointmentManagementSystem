@@ -2,73 +2,128 @@
 {% load crispy_forms_tags %}
 {% load static %}  <!-- Load the static template tag library -->
 {% block content %}
-<link rel="stylesheet" href="{% static 'users/css/main.css' %}">
-    <div class="container" style="margin-top: 30px;">
-    <form action="" method="POST">
-      {% csrf_token %}
-      <fieldset class="form-group">
-          <legend class="border-bottom mb-4" style="color: white;">Please Enter your details</legend>
-          {{ form|crispy }}
-      </fieldset>
-      <div class="form-group" id="signup-button">
-          <button class="btn ">Submit</button>
-      </div>
-    </form>
-    <main class="container">
-        <h2>Your Profile</h2>
-        <img src="Images/my pic.jpg" class="img-thumbnail" alt="..." height="100" width="100">
-        <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Availability</label>
-                <input type="datetime-local" class="form-control" id="exampleInputEmail1" placeholder="Date" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Provide your availability.</div>
-            </div>
-            <div class="mb-3">
-                <h3 for="exampleInputEmail1" class="form-label">Expertise and Service</h3>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Default checkbox
-                    </label>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Eduaction Background</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Professional Experience</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Areas of Specialization
-                </label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Certifications/Accolades</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        </main>
-    </div>
+  <h1>User Profile</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+<!--<link rel="stylesheet" href="{% static 'users/css/main.css' %}">-->
+<!--    <div class="container" style="margin-top: 30px;">-->
+<!--    <form action="" method="POST">-->
+<!--      {% csrf_token %}-->
+<!--      <fieldset class="form-group">-->
+<!--          <legend class="border-bottom mb-4" style="color: white;">Please Enter your details</legend>-->
+<!--          {{ form|crispy }}-->
+<!--      </fieldset>-->
+<!--      <div class="form-group" id="signup-button">-->
+<!--          <button class="btn ">Submit</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--    <main class="container">-->
+<!--        <h2>Your Profile</h2>-->
+<!--        <img src="Images/my pic.jpg" class="img-thumbnail" alt="..." height="100" width="100">-->
+<!--        <form>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="exampleInputEmail1" class="form-label">Availability</label>-->
+<!--                <input type="datetime-local" class="form-control" id="exampleInputEmail1" placeholder="Date" aria-describedby="emailHelp">-->
+<!--                <div id="emailHelp" class="form-text">Provide your availability.</div>-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <h3 class="form-label">Please Select Services that you can Provide:</h3>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Relationship Issues-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Depression-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Life Transitions-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Stress-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Anger Management-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Trauma & PTSD-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Grief & Loss-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Self-esteem & Confidence-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Obsessive-Compulsive Disorder-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Childhood Issues-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Panic Attacks-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+<!--                    <label class="form-check-label" for="flexCheckDefault">-->
+<!--                        Self-Development-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="exampleInputPassword1" class="form-label">Eduaction Background</label>-->
+<!--                <input type="text" class="form-control" id="exampleInputPassword1">-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="exampleInputPassword1" class="form-label">Professional Experience</label>-->
+<!--                <input type="text" class="form-control" id="exampleInputPassword1">-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="exampleInputPassword1" class="form-label">Areas of Specialization-->
+<!--                </label>-->
+<!--                <input type="text" class="form-control" id="exampleInputPassword1">-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--                <label for="exampleInputPassword1" class="form-label">Certifications/Accolades</label>-->
+<!--                <input type="text" class="form-control" id="exampleInputPassword1">-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--        </form>-->
+<!--        </main>-->
+<!--    </div>-->
 {% endblock content %}
