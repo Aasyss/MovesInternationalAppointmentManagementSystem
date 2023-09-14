@@ -1,25 +1,180 @@
-<!-- about_us.html -->
 {% extends 'users/base.html' %}
 {% load social_share %}
+{% load static %}
 {% block content %}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class=" share-icons social-sharing">
-        <h3>Share about us:</h3>
-<!--        <div class="facebook-this">-->
-<!--            <a class="btn-social fa fa-facebook btn-facebook" href="{{ facebook_url }}" target="_blank">facebook</a>-->
-<!--        </div>-->
-<!--        -->
-<!--        <div class="tweet-this">-->
-<!--            <a class="btn-social fa fa-twitter btn-twitter" href="{{ tweet_url }}" class="meta-act-link meta-tweet">{{link_text}}</a>-->
-<!--        </div>-->
-<!--        {% load i18n social_share %}{% get_current_language as LANGUAGE_CODE %}-->
-<!--        <div class="linkedin-this {{link_class}}">-->
-<!--          <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: {{ LANGUAGE_CODE|linkedin_locale }}</script>-->
-<!--          <script type="IN/Share" data-url="{{ linkedin_url }}"></script>-->
-<!--        </div>-->
-        <div class="sharethis-inline-share-buttons"></div>
+<!-- Header -->
+<header class="jumbotron text-center">
+    <h2 class="display-4">About Us</h2>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'users/images/h4-about1.png' %}" class="img-fluid" alt="visa consultant sydney">
+        </div>
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h3 style="color:black"> Our MISSION</h3>
+                <p style="color:black">"To give people the power to share and make the world more open and connected."</p>
+                <br>
+                <br>
+                <br>
+                <h3 style="color:black"> Our VISION</h3>
+                <p style="color:black">"One day, all youth in this nation will have the opportunity to attain an excellent career."</p>
+            </div>
+        </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body" style="background-color: #8a9ca7;">
+                    <i class="flaticon-policy"></i>
+                    <h2>Proper Guidance</h2>
+                    <p>Our dedication will provide the right guidance to solve all the issues.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body" style="background-color: #8a9ca7;">
+                    <i class="flaticon-contract"></i>
+                    <h2>Right Actions</h2>
+                    <p>We follow our sure-shot strategies which will work for you always.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<section class="jumbotron text-white text-center">
+    <h4 style="color: black;">ABOUT CONSULTANT</h4>
+    <h3 style="color: black;">What <strong>Are We?</strong></h3>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Moves International is Australia's trusted bridge to education and migration, partnering with 100+ universities for accurate guidance and offering expertise in visa processes. Moves International is the leading catalyst for international students seeking transformative educational and career opportunities in Australia, paving the way for their brightest futures. Guiding students with bespoke solutions tailored to their unique needs, facilitating seamless migration to Australia, and ensuring every student realizes their highest potential and career aspirations.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                    90%
+                </div>
+            </div>
+            <p class="mt-2">Immigration Consultant</p>
+        </div>
+    </div>
+
+
+        <section>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10 col-xl-8 text-center">
+                    <h3 class="mb-4">Testimonials</h3>
+                    <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                        <p>If you believe in us, we would love to provide the most wonderful guidance to study, travel, and live in Australia.</p>
+                        <p>Want to migrate to Australia? Discuss with us.</p>
+                        <p>Want to study in Australia? We can help you.</p>
+                        <p>Want to extend your visa of subclass 485? We can do that for you.</p>
+                        <p>In short, Contact us for everything because we are sitting next to you only to help you.</p>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row text-center d-flex justify-content-center">
+                <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+                    <div class="card testimonial-card">
+                        <div class="card-up" style="background-color: #9d789b;"></div>
+                        <div class="avatar mx-auto bg-white">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                                class="rounded-circle img-fluid" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-4">Maria Smantha</h4>
+                            <hr />
+                            <p class="dark-grey-text mt-4">
+                                <i class="fas fa-quote-left pe-2"></i>Stable architecture
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+                    <div class="card testimonial-card">
+                        <div class="card-up" style="background-color: #7a81a8;"></div>
+                        <div class="avatar mx-auto bg-white">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                                class="rounded-circle img-fluid" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-4">Lisa Cudrow</h4>
+                            <hr />
+                            <p class="dark-grey-text mt-4">
+                                <i class="fas fa-quote-left pe-2"></i>Quality Content
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-0 d-flex align-items-stretch">
+                    <div class="card testimonial-card">
+                        <div class="card-up" style="background-color: #6d5b98;"></div>
+                        <div class="avatar mx-auto bg-white">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                                class="rounded-circle img-fluid" />
+                        </div>
+                        <div class="card-body">
+                            <h4 class="mb-4">John Smith</h4>
+                            <hr />
+                            <p class="dark-grey-text mt-4">
+                                <i class="fas fa-quote-left pe-2"></i>Great implementation i loved it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="share-icons social-sharing">
+            <h3>Share about us:</h3>
+            <div class="sharethis-inline-share-buttons"></div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <section class="">
+        <footer class="text-center text-white" style="background-color: #0a4275;">
+            <div class="container p-4 pb-0">
+                <section class="">
+                    <p class="d-flex justify-content-center align-items-center">
+                        <span class="me-3">Make a booking</span>
+                        <button type="button" class="btn btn-outline-light btn-rounded">
+                            Make Appointment
+                        </button>
+                    </p>
+                </section>
+            </div>
+
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023 Copyright:
+                <a class="text-white" href="">Moves International</a>
+            </div>
+        </footer>
+    </section>
+</div>
+<!-- Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
 {% endblock %}
