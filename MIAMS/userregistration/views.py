@@ -108,3 +108,6 @@ def add_certificate(request):
 
 def about_us(request):
     return  render(request, 'users/about_us.html')
+
+def contact_us(request):
+    return render(request, 'users/contact_us.html')

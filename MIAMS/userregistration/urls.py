@@ -17,5 +17,5 @@ urlpatterns = [
     path('consultant-details/', views.consultant_details, name='consultant_details'),
     path('add_certificate/', views.add_certificate, name='add_certificate'),
     path('about_us/', views.about_us, name='about_us'),
-
+    path('contact_us/', views.contact_us, name='contact_us'),
 ]
