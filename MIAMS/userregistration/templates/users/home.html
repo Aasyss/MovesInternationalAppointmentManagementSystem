@@ -41,8 +41,250 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+<div class="container-fluid" >
+          <div class="collapse navbar-collapse" id="" >
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+            </div>
+          </div>
+ <br>
+    <br>
+<div class="container-fluid">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-ride="carousel"
 
-  <div style="
+  >
+    <ol class="carousel-indicators" >
+      <li
+        data-target="#carouselExampleIndicators"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100 h-50"  src="{% static 'users/images/image1.png' %}" alt="First slide" />
+        <div class="carousel-caption d-none d-md-block">
+        <p>
+          <h2   style="color: black ";><strong>Proud to launch With New Initiatives As Moves International</strong> </h2>
+        </p>
+        <p><button type="button" class="btn btn-primary"  style="background-color: #FB8500; color: white;" ><a href="{% url 'profile' %}" >Book Appointment</a></button>
+        </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 h-50"  src="{% static 'users/images/image2.png' %}" alt="Second slide" />
+        <div class="carousel-caption d-none d-md-block">
+          <h2 style="color: black ";>Start  Your <strong>Australian Education Journey </strong> with us</h2>
+          <p><button type="button" class="btn btn-primary" style="background-color: #FB8500; color: white;"><a href="{% url 'profile' %}" >Book Appointment</a></button>
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100 h-50" src="{% static 'users/images/image3.png' %}" alt="Third slide" />
+        <div class="carousel-caption d-none d-md-block">
+          <h2 style="color: black ";>We help students to make the MOVE THAT MATTERS</h2>
+          <p><button type="button" class="btn btn-primary" style="background-color: #FB8500; color: white;" ><a href="{% url 'profile' %}" >Book Appointment</a></button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <br>
+
+  <!-- Features -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <i class="fas fa-comments feature-icon"></i>
+            <h3>Live Chat</h3>
+            <p>Get real-time support from our expert counsellors.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-calendar-check feature-icon"></i>
+            <h3>Easy Appointments</h3>
+            <p>Seamlessly book or reschedule your appointments online.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-globe feature-icon"></i>
+            <h3>Global Presence</h3>
+            <p>Assisting students in both Australia and Bangladesh.</p>
+        </div>
+    </div>
+</div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style=" text-align: center; background-color: #023047; color:white;">
+             Student Counselling
+          </div>
+          <div class="card-body" style="background-color: #8a9ca7;">
+            <h5 class="card-title">Moves Internation Student Counselling</h5>
+            <p class="card-text">
+              Student counseling is a vital aspect. If you are considering studying abroad, we can help you. It’s not easy to make the right decision without knowing the details of the courses. Our experts will help you choose the best courses and make the right decisions. If you make the right choice, your career will be an absolute feat. Just share your thoughts and plans with us, and we will give you the most suitable options for your future. </p>
+            <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" > Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-header" style=" text-align: center; background-color: #023047; color:white;">
+             University Admission
+          </div>
+          <div class="card-body" style="background-color: #8a9ca7;">
+            <h5 class="card-title">University Admission in Australia 2023</h5>
+            <p class="card-text">
+              Every college and university has opening and closing dates for University Admission in Australia. You must stay updated on their deadlines. Moreover, Australia university admission requirements include seat availability as well. Moves International helps you by giving all the required information about your selected institution for admission. If you still need to look at one of the best universities, and lead you to your goal.</p>
+            <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}"  >Book Appointment</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+            <div class="card-header" style=" text-align: center; background-color: #023047; color:white;">
+             Professional Year Admission
+            </div>
+            <div class="card-body" style="background-color: #8a9ca7;">
+              <h5 class="card-title">Who should join Professional Year</h5>
+              <p class="card-text">
+                Professional year in Australia is in the highest demand for freshers to apply for jobs in the market. It runs for 12 months to make you fit for Australian industries where you can use your knowledge professionally. Engineering, computer science, and accounting are in high demand for Australian job industries. If you graduated from any of these subjects, be prepared for a professional year program.</p>
+              <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" >Book Appointment</a>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <br>
+    <section class="">
+            <div class="card-header mx-auto " style="text-align: center; background-color: #023047; color:white;">
+                                  <h4 class="cmt-element-subheading">
+                        An Agency You Can Trust
+                    </h4>
+                  </div>
+
+
+        <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                      <div class="card-header" style="background-color: #023047; color:white;">
+                            <h4>Team Representatives</h4>
+                        </div>
+
+                        <div class="card-body" style="background-color: #8a9ca7;">
+                            We are experienced team with the proper knowledge of Migration Law & Practices, which makes our services flawless.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header" style="background-color: #023047; color:white;">
+                                                  <h4>Best Consultation</h4>
+                        </div>
+                        <div class="card-body" style="background-color: #8a9ca7;">
+                            We can assist you with the best visa migration and education services according to your requirement.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header" style="background-color:#023047; color:white;">
+                            <h4>Customised Service</h4>
+                        </div>
+                        <div class="card-body" style="background-color: #8a9ca7;">
+                            We work for you and your families and ensure a friendly environment where you can talk easily.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-header" style="background-color:#023047; color:white;">
+                            <h4>5-Star Reviews</h4>
+                        </div>
+                        <div class="card-body" style="background-color: #8a9ca7;">
+                            We have 5000+ pleased clients in Australia. Moves International has been able to gain '5-star ratings & reviews.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+</div>
+
+<br>
+ <br>
+
+<div class="container-fluid" style="background-color: #023047; padding: 20px 10px 20px 10px;">
+  <div class="row">
+    <div class="col">
+      <video width="100%" height="100%" controls>
+        <source src="{% static 'users/videos/WhatsApp-Video-2023-01-02-at-4.54.54-PM.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+<!--        <iframe width="100%" height="300px" src="{% static 'users/videos/WhatsApp-Video-2023-01-02-at-4.54.54-PM.mp4' %}" title="YouTube video" allowfullscreen></iframe>-->
+      </div>
+
+    <div class="col h-auto">
+
+        <div class="card-body text-primary">
+          <h5 class="card-title" style="color: #FB8500;">Together We Make a Difference</h5>
+          <p class="card-text" style="color: #FB8500;">
+            We have worked with more than 100+ Universities, Colleges And Institutions.
+            We want to build your present and, we want to secure your future as well.
+          </p>
+        </div>
+      </div>
+
+    </div>
+</div>
+  </body>
+
+<br>
+
+  <section class="">
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #023047; ">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: CTA -->
+        <section class="">
+          <p class="d-flex justify-content-center align-items-center">
+            <span class="me-3">Make a booking </span>
+               <a class="btn btn-primary" style="background-color: #FB8500; margin-left: 10px;" href="{% url 'profile' %}" >Book Appointment</a>
+          </p>
+        </section>
+        <!-- Section: CTA -->
+      </div>
+      <!-- Grid container -->
+    <div style="
       width: 100%;
       height: 100%;
       padding-left: 64px;
@@ -69,8 +311,8 @@
         <div
           style="
             text-align: center;
-            color: #8a9ca7;
-            font-size: 13px;
+            color: black;
+            font-size: 14px;
             font-family: Inter;
             font-weight: 500;
             line-height: 13px;
@@ -125,8 +367,8 @@
         <div
           style="
             text-align: center;
-            color: #8a9ca7;
-            font-size: 13px;
+            color: black;
+            font-size: 14px;
             font-family: Inter;
             font-weight: 500;
             line-height: 13px;
@@ -166,21 +408,22 @@
             display: flex;
           "
         >
-          <div style="width: 16px; height: 13px;">
-            <img
-            style="
-              width: 16px;
-              height: 15.9px;
-              left: 0px;
-              top: 0px;
-              position: absolute;
-            "
-            src="{% static 'users/images/twitter.png' %}"
-          />
-          </div>
+<!--&lt;!&ndash;          <div style="width: 16px; height: 13px;">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img&ndash;&gt;-->
+<!--            style="-->
+<!--              width: 16px;-->
+<!--              height: 15.9px;-->
+<!--              left: 0px;-->
+<!--              top: 0px;-->
+<!--              position: absolute;-->
+<!--            "-->
+<!--            src="{% static 'users/images/twitter.png' %}"-->
+<!--          />-->
+<!--          </div>-->
         </div>
       </div>
       <div style="width: 16px; height: 16px; position: relative">
+               <a href="https://www.instagram.com/moves_international_/" target="_blank">
         <img
           style="
             width: 16px;
@@ -191,7 +434,9 @@
           "
           src="{% static 'users/images/instagram.png' %}"
         />
+               </a>
       </div>
+
       <div style="width: 16px; height: 16px; position: relative">
         <div
           style="
@@ -202,6 +447,8 @@
             position: absolute;
           "
         >
+            <a href="https://www.facebook.com/mieducationsydney/" target="_blank">
+
         <img
         style="
           width: 16px;
@@ -211,7 +458,9 @@
           position: absolute;
         "
         src="{% static 'users/images/facebook.png' %}"
-      /></div>
+      />
+            </a>
+        </div>
       </div>
       <div style="width: 16px; height: 16px; position: relative">
         <div
@@ -222,7 +471,9 @@
             top: 0px;
             position: absolute;
           "
-        > <img
+        >
+             <a href="https://www.youtube.com/channel/UCkYOrSrqLljTOvP37t6ZAjQ/" target="_blank">
+            <img
         style="
           width: 16px;
           height: 15.9px;
@@ -232,6 +483,7 @@
         "
         src="{% static 'users/images/youtube.png' %}"
       />
+             </a>
           <div
             style="
               width: 4.13px;
@@ -248,283 +500,10 @@
       </div>
     </div>
   </div>
-<div class="container-fluid">
-  <div
-    id="carouselExampleIndicators"
-    class="carousel slide"
-    data-ride="carousel"
-
-  >
-    <ol class="carousel-indicators" >
-      <li
-        data-target="#carouselExampleIndicators"
-        data-slide-to="0"
-        class="active"
-      ></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100 h-50"  src="{% static 'users/images/image1.png' %}" alt="First slide" />
-        <div class="carousel-caption d-none d-md-block">
-        <p>
-          <h2   style="color: black ";><strong>Proud to launch With New Initiatives As Moves International</strong> </h2>
-        </p>
-        <p><button type="button" class="btn btn-primary"><a style="color: white;" href="home.html">Book Appointment</a></button>
-        </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100 h-50"  src="{% static 'users/images/image2.png' %}" alt="Second slide" />
-        <div class="carousel-caption d-none d-md-block">
-          <h2 style="color: black ";>Start  Your <strong>Australian Education Journey </strong> with us</h2>
-          <p><button type="button" class="btn btn-primary"><a style="color: white;" href="home.html">Book Appointment</a></button>
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block w-100 h-50" src="{% static 'users/images/image3.png' %}" alt="Third slide" />
-        <div class="carousel-caption d-none d-md-block">
-          <h2 style="color: black ";>We help students to make the MOVE THAT MATTERS</h2>
-          <p><button type="button" class="btn btn-primary"><a style="color: white;" href="">Book Appointment</a></button>
-          </p>
-        </div>
-      </div>
-    </div>
-    <a
-      class="carousel-control-prev"
-      href="#carouselExampleIndicators"
-      role="button"
-      data-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a
-      class="carousel-control-next"
-      href="#carouselExampleIndicators"
-      role="button"
-      data-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-
-  <br>
-
-  <!-- Features -->
-<div class="container my-5">
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <i class="fas fa-comments feature-icon"></i>
-            <h3>Live Chat</h3>
-            <p>Get real-time support from our expert counsellors.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <i class="fas fa-calendar-check feature-icon"></i>
-            <h3>Easy Appointments</h3>
-            <p>Seamlessly book or reschedule your appointments online.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <i class="fas fa-globe feature-icon"></i>
-            <h3>Global Presence</h3>
-            <p>Assisting students in both Australia and Bangladesh.</p>
-        </div>
-    </div>
-</div>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card-header" style="background-color: #2f80ed;">
-             Student Counselling
-          </div>
-          <div class="card-body" style="background-color: #8a9ca7;">
-            <h5 class="card-title">Moves Internation Student Counselling</h5>
-            <p class="card-text">
-              If you are considering studying abroad, we can help you in many ways, including student Counselling. It’s not easy to make the right decision without knowing the details of the courses. Our experts will help you choose the best courses and make the right decisions regarding your study. If you make the right choice, your career will be an absolute feat. Just share your thoughts and plans with us, and we will give you the most suitable options for your future. </p>
-            <a href="#" class="btn btn-primary">Make an Appointment</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-          <div class="card-header" style="background-color: #2f80ed;">
-             University Admission
-          </div>
-          <div class="card-body" style="background-color: #8a9ca7;">
-            <h5 class="card-title">University Admission in Austrailia 2023</h5>
-            <p class="card-text">
-              Every college and university has opening and closing dates for University Admission in Australia. Whether it’s Melbourne, Sydney, or Canberra, you must stay updated on their deadlines. Moreover, Australia university admission requirements include seat availability as well. Moves International helps you by giving all the required information about your selected institution for admission. If you still need to look at one of the best universities, we will show you another option that might lead you to your goal.</p>
-            <a href="#" class="btn btn-primary">Make an Appointment</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card">
-            <div class="card-header" style="background-color: #2f80ed;">
-             Professional Year Admission
-            </div>
-            <div class="card-body" style="background-color: #8a9ca7;">
-              <h5 class="card-title">Who should join Proffessional Year</h5>
-              <p class="card-text">
-                Professional year in Australia is in the highest demand for the upcoming job market and the fresher for applying. It runs for 12 months to make you fit for Australian industries where you can use your knowledge professionally. Engineering, computer science, and accounting are in high demand for Australian job industries. If you graduated from any of these subjects, be prepared for a professional year program.</p>
-              <a href="#" class="btn btn-primary">Make an Appointment</a>
-            </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <br>
-    <section class="">
-      <div class="row">
-        <div class="col">
-          <div class="card">
-            <div class="card-header mx-auto ">
-                                  <h4 class="cmt-element-subheading">
-                        An Agency You Can Trust
-                    </h4>
-                  </div>
-
-                </div>
-            </div>
-        </div>
-        <br>
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card">
-                      <div class="card-header" style="background-color: #2f80ed;">
-                            <h4>TEAM REPRESENTATIVES</h4>
-                        </div>
-
-                        <div class="card-body" style="background-color: #8a9ca7;">
-                            We are experienced team with the proper knowledge of Migration Law & Practices, which makes our services flawless.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <div class="card-header" style="background-color: #2f80ed;">
-                                                  <h4>BEST CONSULTATION</h4>
-                        </div>
-                        <div class="card-body" style="background-color: #8a9ca7;">
-                            We can assist you with the best visa migration and education services according to your requirement.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <div class="card-header" style="background-color: #2f80ed;">
-                            <h4>CUSTOMISED SERVICE</h4>
-                        </div>
-                        <div class="card-body" style="background-color: #8a9ca7;">
-                            We work for you and your families and ensure a friendly environment where you can talk easily.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="card">
-                    <div class="card-header" style="background-color: #2f80ed;">
-                            <h4>5-STAR REVIEWS</h4>
-                        </div>
-                        <div class="card-body" style="background-color: #8a9ca7;">
-                            We have 5000+ pleased clients in Australia. Moves International has been able to gain '5-star ratings & reviews for their satisfaction.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-    </section>
-</div>
-
-
-
-<div class="container-fluid" style="background-color: #0a4275; padding: 20px 10px 20px 10px;">
-  <div class="row">
-    <div class="col">
-      <video width="100%" height="100%" controls>
-        <source src="{% static 'users/videos/WhatsApp-Video-2023-01-02-at-4.54.54-PM.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-
-<!--        <iframe width="100%" height="300px" src="{% static 'users/videos/WhatsApp-Video-2023-01-02-at-4.54.54-PM.mp4' %}" title="YouTube video" allowfullscreen></iframe>-->
-      </div>
-
-    <div class="col h-auto">
-      <div class="card border-primary mb-3" style="width: fit-content;">
-        <div class="card-header">Attention</div>
-        <div class="card-body text-primary">
-          <h5 class="card-title">TOGETHER WE MAKE A DIFFRENCE</h5>
-
-          <p class="card-text">
-            We have worked with more than 100+ Universities, Colleges And Institutions.
-            We want to build your present and, we want to secure your future as well.
-          </p>
-          <p class="card-text">
-            We have worked with more than 100+ Universities, Colleges And Institutions.
-            We want to build your present and, we want to secure your future as well.
-          </p>
-          <p class="card-text">
-            We have worked with more than 100+ Universities, Colleges And Institutions.
-            We want to build your present and, we want to secure your future as well.
-          </p>
-        </div>
-      </div>
-
-    </div>
-    <div class="col h-auto">
-      <div class="card border-primary mb-3" style="width: fit-content;">
-        <div class="card-header">Attention</div>
-        <div class="card-body text-primary">
-          <h5 class="card-title">TOGETHER WE MAKE A DIFFRENCE</h5>
-          <p class="card-text">
-            We have worked with more than 100+ Universities, Colleges And Institutions.
-            We want to build your present and, we want to secure your future as well.          </p>
-          <p class="card-text">
-            We have worked with more than 100+ Universities, Colleges And Institutions.
-            We want to build your present and, we want to secure your future as well.
-          </p>
-          <p class="card-text">
-            We have worked with more than 100+ Universities, Colleges And Institutions.
-            We want to build your present and, we want to secure your future as well.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-  </body>
-
-<br>
-
-  <section class="">
-    <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #0a4275;">
-      <!-- Grid container -->
-      <div class="container p-4 pb-0">
-        <!-- Section: CTA -->
-        <section class="">
-          <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Make a booking </span>
-            <button type="button" class="btn btn-outline-light btn-rounded">
-              Make Appointment
-            </button>
-          </p>
-        </section>
-        <!-- Section: CTA -->
-      </div>
-      <!-- Grid container -->
-
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2023 Copyright:
-        <a class="text-white" href="">Moves International</a>
+        <a class="text-white" href="home.html">Moves International</a>
       </div>
       <!-- Copyright -->
     </footer>
@@ -532,5 +511,5 @@
   </section>
 
 
-</div>
+
 {% endblock content %}

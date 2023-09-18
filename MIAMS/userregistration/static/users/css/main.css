@@ -4,16 +4,16 @@
   background-attachment: fixed;
 }
 #main-navbar{
-  color: white;
+  color: #FB8500;
   font-size: 15px;
+  background-color: #023047;
+
 }
-
-
-
 
 #header-text{
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif
+  ;
   font-size: 50px;
   margin-top: 100px;
 }
@@ -53,6 +53,7 @@
 #header-links:active{
   font-size: 10px;
 }
+
 
 #body-link-row{
   position: relative;
@@ -245,22 +246,13 @@ text-align:center;
   left: -300px; /* Initially hidden */
   width: 300px;
   height: 100vh;
-  background-color: #343a40;
+  background-color: #023047;
   transition: left 0.3s ease-in-out;
 }
 
 .sidebar.active {
   left: 0; /* Show sidebar */
 }
-
-
-
-
-
-
-
-
-
 
 // Remy function
 @function remy($value) {
@@ -392,7 +384,7 @@ color: #999;
   text-transform: uppercase;
   text-decoration: none;
   font-size: 13px;
-  background-color: #fd5e19;
+  background-color: #fb8500;
   overflow: hidden;
   transition: 0.2s;
 }

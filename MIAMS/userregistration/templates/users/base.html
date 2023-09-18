@@ -27,21 +27,23 @@
   </head>
   <body>
   {% load static %}
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top navbar-custom" id="main-navbar">
-        <a href="#" class="navbar-brand">
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top navbar-custom" id="main-navbar" style ="background-color:#023047;">
+        <a href="#" class="navbar-brand" >
           <!-- Logo Image -->
-          <img src="{% static 'users/images/logo.png' %}" width="45" alt="" class="d-inline-block align-middle mr-2">
+          <img src="{% static 'users/images/logo.png' %}" width="150" alt="" class="d-inline-block align-middle mr-2">
           <!-- Logo Text -->
-          <span class="text-uppercase font-weight-bold" href="{% url 'home' %}">Moves International</span>
+          <span class="text-uppercase font-weight-bold" href="{% url 'home' %}" >Moves International</span>
         </a>
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="">
+        <div class="container-fluid" >
+          <div class="collapse navbar-collapse" id="" >
             <div class="navbar-nav">
-              <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
-              <a class="nav-link" href="#">Visa Application</a>
-              <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
-              <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+              <a class="nav-link" href="{% url 'home' %}" {% if request.resolver_match.url_name == 'home' %}
+                 style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>Home</a>
+<a class="nav-link" href="#">Visa Application</a>
+<a class="nav-link" href="{% url 'about_us' %}" {% if request.resolver_match.url_name == 'about_us' %}style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>About Us</a>
+<a class="nav-link" href="{% url 'contact_us' %}" {% if request.resolver_match.url_name == 'contact_us' %}style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>Contact Us</a>
             </div>
+
             <div class="navbar-nav">
               <form class="navbar-nav" id="registration">
                 {% if user.is_authenticated %}
@@ -53,7 +55,7 @@
                     </ul>
                   </div>
                   {% else %}
-                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Create Account </a>
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; "type="submit" id="header-links"> Create Account </a>
                     <a href="{% url 'login' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links">Log In</a>
                   {% endif %}
                 </form>
