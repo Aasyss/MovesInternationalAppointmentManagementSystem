@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('appointment_management.urls')),
     path('', include('student.urls')),
     path('', include('django.contrib.auth.urls')),
+    path('', include('book_appointment.urls')),
 ]
 
 if settings.DEBUG:

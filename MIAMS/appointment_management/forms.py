@@ -4,21 +4,6 @@ from .models import UserProfile
 from.models import Setup_Availability
 
 
-class AppointmentBookingForm(forms.Form):
-    consultant = forms.ModelChoiceField(queryset=UserProfile.objects.filter(user__groups__name='consultant'))
-    date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-    start_time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}))
-    end_time = forms.TimeField(widget=forms.TimeInput(attrs={'type': 'time'}))
-
-    def clean(self):
-        cleaned_data = super().clean()
-        start_time = cleaned_data.get('start_time')
-        end_time = cleaned_data.get('end_time')
-
-        if start_time >= end_time:
-            raise forms.ValidationError("End time must be after start time.")
-
-        return cleaned_data
 
 
 class AvailabilityForm(forms.ModelForm):

@@ -28,9 +28,11 @@ def register(request):
             role = form.cleaned_data['role']
             if role == 'student':
                 user.groups.add(Group.objects.get(name='student'))
+                user_profile, created = UserProfile.objects.get_or_create(user=request.user)
                 return HttpResponseRedirect(reverse('student_details'))
             elif role == 'consultant':
                 user.groups.add(Group.objects.get(name='consultant'))
+                user_profile, created = UserProfile.objects.get_or_create(user=request.user)
                 return HttpResponseRedirect(reverse('consultant_details'))
             username = form.cleaned_data.get('username')
             messages.success(request, f'Hi {username}, your account was created successfully')
