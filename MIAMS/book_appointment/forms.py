@@ -29,15 +29,6 @@ class AppointmentBookingForm(forms.Form):
             selected_start_time = datetime.combine(date, appointment_start_time)
             selected_end_time = datetime.combine(date, appointment_end_time)
 
-            print(f"available_start_time: {available_start_time}")
-            print(f"available_end_time: {available_end_time}")
-            print(f"selected_start_time: {selected_start_time}")
-            print(f"selected_end_time: {selected_end_time}")
-
-            print(type(available_start_time))
-            print(type(available_end_time))
-            print(type(selected_start_time.time()))
-            print(type(selected_end_time.time()))
 
             if not (available_start_time <= selected_start_time.time() < available_end_time and
                     available_start_time < selected_end_time.time() <= available_end_time):
