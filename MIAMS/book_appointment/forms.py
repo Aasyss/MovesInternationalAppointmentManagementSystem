@@ -16,9 +16,8 @@ class AppointmentBookingForm(forms.Form):
         cleaned_data = super().clean()
         consultant = cleaned_data.get('consultant')
         date = cleaned_data.get('date')
-        appointment_start_time = cleaned_data.get('start_time')
-        appointment_end_time = cleaned_data.get('end_time')
-
+        appointment_start_time = cleaned_data.get('appointment_start_time')
+        appointment_end_time = cleaned_data.get('appointment_end_time')
         if consultant and date and appointment_start_time and appointment_end_time:
             day_of_week = date.weekday()
             day_of_week_name = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
@@ -28,8 +27,6 @@ class AppointmentBookingForm(forms.Form):
 
             selected_start_time = datetime.combine(date, appointment_start_time)
             selected_end_time = datetime.combine(date, appointment_end_time)
-
-
             if not (available_start_time <= selected_start_time.time() < available_end_time and
                     available_start_time < selected_end_time.time() <= available_end_time):
                 raise forms.ValidationError("Selected time is not available.")

@@ -61,9 +61,9 @@
                 </form>
               <form class="navbar-nav" id="registration">
                     {% if user.is_authenticated %}
-                      <a href="{% url 'profile' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
+                      <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
                     {% else %}
-                      <a href="{% url 'profile' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
+                      <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
                     {% endif %}
               </form>
             </div>

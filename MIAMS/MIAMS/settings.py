@@ -11,22 +11,35 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@%)c48_fdpwlj8ja^xx^(h-$kn9=xzd#-lcp6^d0)(imvzl20s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# # This can be a string or callable, and should return a base host that
+# # will be used when receiving callbacks and notifications from payment
+# # providers.
+# #
+# # Keep in mind that if you use `localhost`, external servers won't be
+# # able to reach you for webhook notifications.
+# PAYMENT_HOST = 'localhost:8000'
+#
+# # Whether to use TLS (HTTPS). If false, will use plain-text HTTP.
+# # Defaults to ``not settings.DEBUG``.
+# PAYMENT_USES_SSL = False
 
 # Application definition
 
@@ -43,6 +56,7 @@ INSTALLED_APPS = [
     'userregistration',
     'appointment_management',
     'book_appointment',
+    'payment',
     'student',
     'consultant',
     'crispy_forms',
@@ -50,6 +64,9 @@ INSTALLED_APPS = [
     'django_social_share',
     'djangobower',
     'faker',
+    'stripe',
+    # 'payments'
+
 
 
 

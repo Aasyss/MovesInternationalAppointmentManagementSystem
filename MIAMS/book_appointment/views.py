@@ -24,8 +24,10 @@ def book_appointment(request):
             selected_end_time = datetime.combine(date, appointment_end_time)
 
             if (available_start_time <= selected_start_time.time() < available_end_time and
-                available_start_time < selected_end_time.time() <= available_end_time):
-
+                    available_start_time < selected_end_time.time() <= available_end_time):
+                student_email = request.user.email
+                consultant_email = consultant.user.email
+                print(student_email)
                 # The selected time slot is available, so create the appointment
                 appointment = Appointment(
                     student=request.user.userprofile,
