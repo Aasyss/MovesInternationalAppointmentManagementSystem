@@ -74,11 +74,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'django_crontab'
     # 'payments'
-
-
-
-
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -222,3 +219,8 @@ EMAIL_USE_TLS = True  # Use TLS for secure connection
 EMAIL_HOST_USER = HOST_EMAIL  # Replace with your email
 EMAIL_HOST_PASSWORD = HOST_EMAIL_PASSWORD  # Replace with your email password
 DEFAULT_FROM_EMAIL = HOST_EMAIL  # Replace with your email
+
+
+CRONJOBS = [
+    ('0 */1 * * *', 'notifications.management.commands.send_notifications'),
+]
