@@ -1,12 +1,12 @@
-{% extends 'student/base.html' %}
+{% extends 'users/base.html' %}
 
 {% block content %}
-    <h2>Consultants List</h2>
+    <body style="background-color: #CBD5D4;">
 
+    <h2 style="text-align:center;">Consultants List</h2>
 
-
-    <form method="GET">
-        <label for="expertise">Filter by Expertise:</label>
+    <form method="GET" style="color:black; text-align:center;">
+        <label for="expertise" style="color:black;">Filter by Expertise:</label>
         <select name="expertise" id="expertise">
             <option value="" {% if selected_expertise == 'All' %}selected{% endif %}>All</option>
             <option value="Visa Counselor" {% if selected_expertise == 'Visa Counselor' %}selected{% endif %}>Visa Counselor</option>
@@ -18,10 +18,10 @@
             {% endfor %}
         </select>
 
-        <button type="submit">Filter</button>
+        <button type="submit" style="background-color: #FB8500;">Filter</button>
     </form>
 
-    <ul>
+    <!--<ul>
         {% for consultant in consultants %}
             <li>
                 {{ consultant.user.username }} - {{ consultant.expertise }}
@@ -29,4 +29,46 @@
             </li>
         {% endfor %}
     </ul>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;"> <!-- Flex container
+    {% for consultant in consultants %}
+        <div style="box-sizing: border-box; flex: 0 0 calc(33.33% - 20px); border: 1px solid #aaa; padding: 10px; margin-bottom: 20px; background-color: #023047;">
+            <span style="font-weight: bold; color: white;">{{ consultant.user.username }}</span> -
+            <span style="color: white;">{{ consultant.expertise }}</span>
+            <a href="{% url 'view_consultant_details' consultant.id %}" style="display: inline-block; margin-top: 10px; padding: 5px 10px; border: 1px solid #FB8500; background-color: #FB8500; color: white; text-decoration: none;">View Details</a>
+        </div>
+    {% endfor %}
+</div> -->
+
+    <br>
+    <br>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    {% for consultant in consultants %}
+        <div style="box-sizing: border-box; width: 285px; height: 300px; margin-right: 15px; margin-bottom: 20px; border: 1px solid #aaa; padding: 10px; background-color:#023047; text-align: center; border-radius:15px; display: flex; flex-direction: column; justify-content: space-between;">
+
+            <!-- Profile Picture -->
+            <img src="{{ consultant.user.profile_picture_url }}" alt="{{ consultant.user.username }}'s profile picture" style="max-width: 80%; border-radius: 50%; margin-bottom: 10px; color:white;">
+
+            <!-- Username -->
+            <div style="font-weight: bold; color:white; margin: 0; padding: 0; line-height: 1.2;">{{ consultant.user.username }}</div>
+
+            <!-- Expertise -->
+            <div style="color:white; margin: 0; padding: 0; line-height: 1.2;">{{ consultant.expertise }}</div>
+
+            <!-- View Details Link -->
+            <a href="{% url 'view_consultant_details' consultant.id %}" style="display: inline-block; margin-top: 5px; padding: 3px 8px; border: 1px solid #FB8500; background-color: #FB8500; color: white; text-decoration: none; border-radius: 5px; font-size: 0.8em;">View Details</a>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+    </body>
 {% endblock %}

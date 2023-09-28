@@ -4,6 +4,7 @@
   background-attachment: fixed;
 }
 #main-navbar{
+
   color: #FB8500;
   font-size: 15px;
   background-color: #023047;
@@ -39,6 +40,7 @@
   font-size: 13px;
   overflow: hidden;
   transition: 0.2s;
+  float: right!important;
 }
 #header-links:hover{
   color: #021f3b;
@@ -49,6 +51,8 @@
   transition-delay: 0.1s;
   text-decoration: none;
   border-radius: 9px;
+  float: right!important;
+
 }
 #header-links:active{
   font-size: 10px;

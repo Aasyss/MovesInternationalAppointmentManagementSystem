@@ -1,16 +1,19 @@
-{% extends 'appointment_management/base.html' %}
+{% extends 'users/base.html' %}
 {% load static %}
 
 {% block content %}
-<div class="container">
-  <h2>Set Availability</h2>
+<br>
+<br>
+<body style="background-color: #CBD5D4;">
+
+<h2 style="text-align:center;">Set Availability</h2>
+<div class="container" style="background-color: #023047; border-radius: 20px; color:white;">
 
   <form method="post">
     {% csrf_token %}
 
     Start Date:
-    <input type="text" class="form-control datepicker" name="start_date" id="datepicker" value="{{ form.start_date.value|default:'' }}"><br><br>
-
+    <input type="text" class="form-control datepicker" name="start_date" id="datepicker" value="{{ form.start_date.value|default:'' }}"><br>
       <h3>Monday</h3>
         <div class="form-group">
           <label for="monday_start_time">Start Time:</label>
@@ -221,7 +224,9 @@
           </div>
         </div>
 
-    <button type="submit" class="btn btn-primary">Save Availability</button>
+    <button type="submit" class="btn btn-primary" style="background-color: #FB8500;">Save Availability</button>
+    <br>
+    <br>
   </form>
 </div>
   <script>
@@ -239,4 +244,5 @@
       donetext: 'Done'
     });
   </script>
+</body>
 {% endblock %}

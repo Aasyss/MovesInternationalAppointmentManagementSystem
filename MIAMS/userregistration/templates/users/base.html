@@ -37,36 +37,34 @@
         <div class="container-fluid" >
           <div class="collapse navbar-collapse" id="" >
             <div class="navbar-nav">
-              <a class="nav-link" href="{% url 'home' %}" {% if request.resolver_match.url_name == 'home' %}
-                 style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>Home</a>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
 <a class="nav-link" href="#">Visa Application</a>
-<a class="nav-link" href="{% url 'about_us' %}" {% if request.resolver_match.url_name == 'about_us' %}style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>About Us</a>
-<a class="nav-link" href="{% url 'contact_us' %}" {% if request.resolver_match.url_name == 'contact_us' %}style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>Contact Us</a>
+<a class="nav-link" href="{% url 'about_us' %}" >About Us</a>
+<a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
             </div>
-
-            <div class="navbar-nav">
-              <form class="navbar-nav" id="registration">
-                {% if user.is_authenticated %}
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Welcome, {{ request.user.username }}</a>
-                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                      <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                      <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
-                    </ul>
-                  </div>
-                  {% else %}
-                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; "type="submit" id="header-links"> Create Account </a>
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links">Log In</a>
-                  {% endif %}
-                </form>
-              <form class="navbar-nav" id="registration">
-                    {% if user.is_authenticated %}
-                      <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
-                    {% else %}
-                      <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
-                    {% endif %}
-              </form>
+<div class="navbar-nav ml-auto">
+    <form class="navbar-nav" id="registration">
+        {% if user.is_authenticated %}
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Welcome, {{ request.user.username }}</a>
+                <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                </ul>
             </div>
+        {% else %}
+            <a href="{% url 'register' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;" id="header-links"> Sign Up </a>
+            <a href="{% url 'login' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; margin-left: 10px;" id="header-links">Log In</a>
+        {% endif %}
+    </form>
+    <form class="navbar-nav" id="appointment-form">
+        {% if user.is_authenticated %}
+            <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;" id="header-links"> Book Appointment </a>
+        {% else %}
+            <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;" id="header-links"> Book Appointment </a>
+        {% endif %}
+    </form>
+</div>
           </div>
         </div>
     </nav>
@@ -79,6 +77,7 @@
         {% endfor %}
       {% endif %}
       </div>
+
       {% block content %}
       {% endblock content %}
     </div>
