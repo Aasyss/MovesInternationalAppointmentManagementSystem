@@ -47,14 +47,18 @@
     {% for consultant in consultants %}
         <div style="box-sizing: border-box; width: 285px; height: 300px; margin-right: 15px; margin-bottom: 20px; border: 1px solid #aaa; padding: 10px; background-color:#023047; text-align: center; border-radius:15px; display: flex; flex-direction: column; justify-content: space-between;">
 
-            <!-- Profile Picture -->
-            <img src="{{ consultant.user.profile_picture_url }}" alt="{{ consultant.user.username }}'s profile picture" style="max-width: 80%; border-radius: 50%; margin-bottom: 10px; color:white;">
-
             <!-- Username -->
-            <div style="font-weight: bold; color:white; margin: 0; padding: 0; line-height: 1.2;">{{ consultant.user.username }}</div>
+            <div style="font-weight: bold; color:white; margin: 0; padding: 0; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ consultant.user.username }}</div>
+
+            <!-- Profile Picture -->
+            {% if consultant.profile_picture %}
+                <div style="flex: 1; display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+                    <img src="{{ consultant.profile_picture.url }}" alt="{{ consultant.user.username }}'s profile picture" style="max-width: 150px; max-height: 150px; object-fit: cover; border-radius: 50%; color:white;">
+                </div>
+            {% endif %}
 
             <!-- Expertise -->
-            <div style="color:white; margin: 0; padding: 0; line-height: 1.2;">{{ consultant.expertise }}</div>
+            <div style="color:white; margin: 0; padding: 0; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ consultant.expertise }}</div>
 
             <!-- View Details Link -->
             <a href="{% url 'view_consultant_details' consultant.id %}" style="display: inline-block; margin-top: 5px; padding: 3px 8px; border: 1px solid #FB8500; background-color: #FB8500; color: white; text-decoration: none; border-radius: 5px; font-size: 0.8em;">View Details</a>
@@ -62,6 +66,7 @@
     {% endfor %}
 
 </div>
+
 
 
 
