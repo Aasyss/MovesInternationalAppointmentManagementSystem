@@ -29,6 +29,8 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('', include('book_appointment.urls')),
     path('payment/', include('payment.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('social-auth/', include('social_django.urls', namespace='social')),
 ]
 
 if settings.DEBUG:

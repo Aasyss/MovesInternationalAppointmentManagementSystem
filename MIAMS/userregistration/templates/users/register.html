@@ -1,8 +1,10 @@
 {% extends 'users/base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
-
+{% load socialaccount %}
 {% block content %}
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <link rel="stylesheet" href="{% static 'users/css/main.css' %}">
 <body style="background-color: #CBD5D4;">
     <div class="container" style="margin-top: 30px; background-color: #023047; border-radius: 50px;">
@@ -20,10 +22,20 @@
           <small class="text-muted ml-3" >Already have an account?
           <a href="{% url 'login' %}" role="button" style="display: inline-block; text-decoration: none; background-color: #FB8500; color: white; border-radius: 6px; padding: 10px 20px;">Log In</a>
 </small>
+          <div class="row">
+  <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+    <button class="btn btn-primary mb-2">
+      <a href="{% url 'social:begin' 'google-oauth2' %}">Login With Google</a>
+    </button>
+  </div>
+</div>
+
+
           <br>
           <br>
       </div>
     </form>
+
     </div>
 </body>
 
