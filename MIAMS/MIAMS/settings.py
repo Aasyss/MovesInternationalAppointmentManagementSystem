@@ -23,6 +23,8 @@ load_dotenv()
 SECRET_KEY = os.environ.get('SECRET_KEY')
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+HOST_EMAIL = os.environ.get('HOST_EMAIL')
+HOST_EMAIL_PASSWORD = os.environ.get('HOST_EMAIL_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -171,3 +173,11 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 LOGIN_REDIRECT_URL = 'home'
 
 LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP host
+EMAIL_PORT = 587  # Replace with your SMTP port (usually 587 for TLS)
+EMAIL_USE_TLS = True  # Use TLS for secure connection
+EMAIL_HOST_USER = HOST_EMAIL  # Replace with your email
+EMAIL_HOST_PASSWORD = HOST_EMAIL_PASSWORD  # Replace with your email password
+DEFAULT_FROM_EMAIL = HOST_EMAIL  # Replace with your email
