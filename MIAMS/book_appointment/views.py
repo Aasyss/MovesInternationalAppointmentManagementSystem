@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .forms import AppointmentBookingForm
 from .models import Appointment
 from appointment_management.models import Setup_Availability
@@ -6,6 +7,7 @@ from datetime import datetime
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
+@login_required
 def book_appointment(request):
     day_of_week_name = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     if request.method == 'POST':
