@@ -1,0 +1,7 @@
+SECRET_KEY=django-insecure-@%)c48_fdpwlj8ja^xx^(h-$kn9=xzd#-lcp6^d0)(imvzl20s
+STRIPE_PUBLIC_KEY=pk_test_51NszRaDB62Qu8opnwq7aT31qzXqXkPacWtXms8NSQLdYrrfGnFdin0ui1PDMKp0Xx4refg9oAT4Qi3Auu6FUOHhE00Bhi0AIa8
+STRIPE_SECRET_KEY=sk_test_51NszRaDB62Qu8opn7vUWBbq589mqTYvYbCxnB2JzwIpjX4dUwBDoKrhjTD3iF2vYRUk247Fe58gUnTDQf8emWrTD00Y20Baean
+HOST_EMAIL=movesinternationaldemoproject@gmail.com
+HOST_EMAIL_PASSWORD=ursq fzdx mucp aqre
+GOOGLE_CLIENT_ID=314364913798-esm60ideklt452cki9c5qjt69s1qc4j1.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=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
