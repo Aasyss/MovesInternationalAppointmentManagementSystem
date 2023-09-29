@@ -31,6 +31,7 @@ urlpatterns = [
     path('payment/', include('payment.urls')),
     path('accounts/', include('allauth.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
+    path('messaging/', include('messaging.urls')),
 ]
 
 if settings.DEBUG:

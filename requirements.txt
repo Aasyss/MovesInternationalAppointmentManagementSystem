@@ -13,6 +13,7 @@ Django==4.2.4
 django-allauth==0.54.0
 django-bower==5.2.0
 django-crispy-forms==2.0
+django-crontab==0.7.1
 django-embed-video==1.4.9
 django-jsonfield==1.4.1
 django-payments==2.0.0

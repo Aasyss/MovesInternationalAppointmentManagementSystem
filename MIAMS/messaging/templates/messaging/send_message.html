@@ -1,0 +1,12 @@
+<form method="post">
+  {% csrf_token %}
+  <label for="recipient">Recipient:</label>
+  <select name="recipient" id="recipient">
+    {% for user in users %}
+      <option value="{{ user.id }}">{{ user.user.username }}</option>
+    {% endfor %}
+  </select><br><br>
+  <label for="content">Message:</label><br>
+  <textarea name="content" id="content" cols="30" rows="5"></textarea><br><br>
+  <button type="submit">Send Message</button>
+</form>

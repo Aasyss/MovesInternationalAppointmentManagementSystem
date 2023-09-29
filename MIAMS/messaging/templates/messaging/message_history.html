@@ -1,0 +1,4 @@
+{% for message in messages %}
+  <p>{{ message.sender.user.username }} (to {{ message.recipient.user.username }}) - {{ message.timestamp }}</p>
+  <p>{{ message.content }}</p>
+{% endfor %}
