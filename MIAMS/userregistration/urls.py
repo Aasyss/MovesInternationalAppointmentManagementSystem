@@ -18,4 +18,5 @@ urlpatterns = [
     path('add_certificate/', views.add_certificate, name='add_certificate'),
     path('about_us/', views.about_us, name='about_us'),
     path('contact_us/', views.contact_us, name='contact_us'),
+    path('visa_application/', views.visa_application, name='visa_application'),
 ]
