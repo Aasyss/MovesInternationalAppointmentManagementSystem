@@ -11,6 +11,7 @@ from .forms import UserRegisterForm, ConsultantDetailsForm
 from .forms import ConsultantDetailsForm, CertificateForm
 from django.contrib.auth.views import LoginView
 
+
 def home(request):
     return render(request, 'users/home.html')
 

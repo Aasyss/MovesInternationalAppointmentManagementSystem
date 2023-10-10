@@ -1,10 +1,10 @@
 {% extends 'book_appointment/base.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
   <h1>Book Appointment</h1>
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+    {{ form|crispy }}
+    <button type="submit">Confirm & Proceed to Checkout</button>
   </form>
 {% endblock %}

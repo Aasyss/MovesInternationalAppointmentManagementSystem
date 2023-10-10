@@ -1,30 +1,30 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const stripe = Stripe('pk_test_51NszRaDB62Qu8opnwq7aT31qzXqXkPacWtXms8NSQLdYrrfGnFdin0ui1PDMKp0Xx4refg9oAT4Qi3Auu6FUOHhE00Bhi0AIa8');
+// static/payment/js/payment.js
 
-    const elements = stripe.elements();
-    const cardElement = elements.create('card');
 
-    cardElement.mount('#card-element');
+console.log("Sanity check!");
+//const appointmentId = {{ appointment_id }};
+const appointment_id = window.location.pathname.split("/").filter(Boolean).pop();
+// Get Stripe publishable key
+fetch("/config/")
+.then((result) => { return result.json(); })
+.then((data) => {
+  // Initialize Stripe.js
+  const stripe = Stripe(data.publicKey);
 
-    const form = document.getElementById('payment-form');
-
-    form.addEventListener('submit', async function(event) {
-        event.preventDefault();
-
-        const { paymentIntent, error } = await stripe.confirmCardPayment(
-            clientSecret, {
-                payment_method: {
-                    card: cardElement,
-                }
-            }
-        );
-
-        if (error) {
-            console.error(error);
-        } else {
-            // Handle successful payment
-            // For example, you can submit the form to a Django view for further processing
-            form.submit();
-        }
+  // new
+  // Event handler
+     document.querySelector("#submitBtn").addEventListener("click", () => {
+        // Get Checkout Session ID
+        fetch(`/create-checkout-session/${appointment_id}`)
+        .then((result) => { return result.json(); })
+        .then((data) => {
+          console.log(data);
+          // Redirect to Stripe Checkout
+          return stripe.redirectToCheckout({sessionId: data.sessionId})
+        })
+        .then((res) => {
+          console.log(res);
+        });
     });
-});
+
+  });

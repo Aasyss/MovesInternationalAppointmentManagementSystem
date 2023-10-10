@@ -3,7 +3,7 @@ from userregistration.models import UserProfile
 from book_appointment.models import Appointment
 
 class Payment(models.Model):
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    student = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     consultant = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='received_payments')
     appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)

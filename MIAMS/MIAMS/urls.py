@@ -23,16 +23,21 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('live_suppport/', include('live_suppport.urls')),
+    # path('', include('paypal.standard.ipn.urls')),
     path('', include('userregistration.urls')),
     path('', include('appointment_management.urls')),
     path('', include('student.urls')),
     path('', include('django.contrib.auth.urls')),
     path('', include('book_appointment.urls')),
-    path('payment/', include('payment.urls')),
+    path('', include('payment.urls')),
     path('accounts/', include('allauth.urls')),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('messaging/', include('messaging.urls')),
+    path('', include('chatbot.urls')),
+    path('', include('live_chat.urls')),
 ]
 
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

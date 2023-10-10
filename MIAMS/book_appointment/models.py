@@ -8,6 +8,8 @@ class Appointment(models.Model):
     appointment_start_time = models.TimeField()
     appointment_end_time = models.TimeField()
     is_available = models.BooleanField(default=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    is_paid = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.student.user.username} - {self.consultant.user.username} - {self.appointment_datetime}"

@@ -1,21 +1,21 @@
-{% extends 'payment/base.html' %}
 {% load static %}
-{% block content %}
-<form id="payment-form">
-    {% csrf_token %}
-    <div id="card-element">
-        {{ form.as_p }}
-        <!-- A Stripe Element will be inserted here. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django + Stripe Checkout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://js.stripe.com/v3/"></script>  <!-- new -->
+    <script src="{% static 'payment/js/payment.js' %}"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.4.0/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <button class="button is-primary" id="submitBtn">Purchase!</button>
     </div>
-<!-- Add hidden fields for student and consultant email addresses -->
-    <input type="hidden" name="student_email" value="{{ student_email }}">
-    <input type="hidden" name="consultant_email" value="{{ consultant_email }}">
-
-    <button id="submit">
-        Pay Now
-    </button>
-</form>
-
-<script src="https://js.stripe.com/v3/"></script>
-<script src="{% static 'payment/js/payment.js' %}"></script>
-{% endblock %}
+  </section>
+  </body>
+</html>

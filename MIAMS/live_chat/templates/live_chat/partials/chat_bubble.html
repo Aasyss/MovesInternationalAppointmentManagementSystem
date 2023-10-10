@@ -1,0 +1,33 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-oBqDVmMz2fnFO9gybBTRuwVlfB6v3fA6Vj5w9zeTlCw3UuTzC5nkrQOmFN3Y18lN" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-WSNiERhpZ8FO+XZnAdBvy5z9zFEIetMMDz4tRM7IjH/1D21Aas3pXMbS5l5/lbE2" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-6De9TQfz8V8hQ33bVLN3Mq8sWJcG4l6W9ARsiYf9zU5Lr1W6f0A5njdj0t5foOcS" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-BO1C5Fs5F0xq+7H7I3sCIfJrCw5TF4Dz1lDmTRyjXz9NoY/K6ZIkjCQ8B/6I3aw" crossorigin="anonymous"></script>
+
+<div id="chat" style="max-width: 300px; position: fixed; right: 2px; bottom: 2px; padding: 0.1rem; background-color: white; border: 1px solid #ccc;">
+  <div id="chat_icon" style="width: 50px; display: flex; align-items: center;">
+    <button id="chat_open" style="width: 50px; display: flex; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+    </svg>
+    </button>
+  </div>
+
+  <div id="chat_welcome" style="display: none;">
+    <input type="text" name="name" id="chat_name" style="width: 100%; margin-bottom: 1rem; padding: 0.5rem 1rem; border-radius: 1rem; background-color: #f0f0f0;" placeholder="Your Name">
+    <button id="chat_join" style="padding: 0.5rem 1rem; border-radius: 1rem; color: white; background-color: #e53935;">Join Chat</button>
+  </div>
+
+  <div id="chat_room" style="display: none;">
+    <div id="chat_log" style="margin-bottom: 1rem; padding: 1rem; background-color: #f0f0f0; border-radius: 1rem; height: 300px; overflow-y: scroll;">
+        <p>Welcome to our chat!</p>
+    </div>
+    <input type="text" name="body" id="chat_message_input" style="width: 100%; margin-bottom: 1rem; padding: 1rem; background-color: #f0f0f0; border-radius: 1rem;" placeholder="Type your message...">
+    <button id="chat_message_submit" style="padding: 0.5rem 1rem; background-color: #e53935; border: none; border-radius: 1rem; color: white;">Send</button>
+  </div>
+
+
+</div>
+
+
+
+

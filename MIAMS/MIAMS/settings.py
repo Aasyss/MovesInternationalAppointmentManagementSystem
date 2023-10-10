@@ -31,6 +31,16 @@ GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ...
+if DEBUG:
+    MIDDLEWARE = [
+        # ...
+        'django.middleware.cache.UpdateCacheMiddleware',
+        # ...
+        'django.middleware.cache.FetchFromCacheMiddleware',
+        # ...
+    ]
+
 ALLOWED_HOSTS = []
 
 # # This can be a string or callable, and should return a base host that
@@ -76,7 +86,15 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'django_crontab',
     'messaging',
-    # 'payments'
+    'chatbot',
+    'paypal.standard.ipn',
+    'corsheaders',
+    'live_suppport',
+    'channels',
+    'channels_redis',
+    'live_chat',
+    # 'tailwind',
+    # 'theme',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -86,6 +104,11 @@ AUTHENTICATION_BACKENDS = [
     # ...
 ]
 
+# TAILWIND_APP_NAME = 'theme'
+#
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 
 AUTHENTICATION_CLASSES = [
     # ...
@@ -121,7 +144,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",  # Add your domain here
+]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'MIAMS.urls'
 
@@ -144,6 +174,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'MIAMS.wsgi.application'
+
+
+ASGI_APPLICATION = "MIAMS.asgi.application" #routing.py will be created later
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': "channels.layers.InMemoryChannelLayer",
+        }
+    }
+
 
 
 # Database
@@ -225,3 +264,10 @@ DEFAULT_FROM_EMAIL = HOST_EMAIL  # Replace with your email
 CRONJOBS = [
     ('0 */1 * * *', 'notifications.management.commands.send_notifications'),
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': '127.0.0.1:8000',
+    }
+}
