@@ -114,3 +114,6 @@ def about_us(request):
 
 def contact_us(request):
     return render(request, 'users/contact_us.html')
+
+def visa_application(request):
+    return  render(request, 'users/visa_application.html')

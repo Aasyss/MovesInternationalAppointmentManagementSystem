@@ -5,29 +5,26 @@
 
 {% block content %}
 
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif;">
 
-<body style="background-color: #CBD5D4;">
+    <h1 style="text-align: center; margin-bottom: 30px;">User Profile</h1>
 
-    <h1 style="text-align: center;">User Profile</h1>
-    <br>
-    <br>
-
-    <div style="display: flex; justify-content: center; align-items: start; gap: 20px;">
+    <div style="display: flex; justify-content: center; align-items: start; gap: 20px; padding: 10px 20px; background-color: #023047; border-radius: 20px; max-width: 800px; margin: 30px auto;">
         <!-- Profile Picture -->
-        <img src="{{ user_profile.user.profile_picture }}" alt="Profile Picture" style="max-width: 200px; border-radius: 50%;">
+        <img src="{{ user_profile.user.profile_picture }}" alt="Profile Picture" style="max-width: 200px; border-radius: 50%; border: 4px solid #fb8500;color:white;">
 
         <!-- User Details with Bold Keys -->
-        <div>
-            <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
-            <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
-            <p><strong>First Name:</strong> {{ user_profile.user.first_name }}</p>
-            <p><strong>Last Name:</strong> {{ user_profile.user.last_name }}</p>
+        <div style="color: white;">
+            <p><strong style="color: #fb8500;">Username:</strong> {{ user_profile.user.username }}</p>
+            <p><strong style="color: #fb8500;">Email:</strong> {{ user_profile.user.email }}</p>
+            <p><strong style="color: #fb8500;">First Name:</strong> {{ user_profile.user.first_name }}</p>
+            <p><strong style="color: #fb8500;">Last Name:</strong> {{ user_profile.user.last_name }}</p>
         </div>
     </div>
 
     <!-- Edit Profile Link (centered below the image and details) -->
     <div style="text-align: center; margin-top: 20px;">
-        <a href="{% url 'profile' %}" style="color:#fb8500;">Edit Profile</a>
+        <a href="{% url 'profile' %}" role="button" class="btn btn-primary btn-lg" style="background-color: #FB8500; color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px;">Edit Profile</a>
     </div>
 
 </body>
