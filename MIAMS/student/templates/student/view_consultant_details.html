@@ -1,5 +1,5 @@
 {% extends 'users/base.html' %}
-
+{% load static %}
 {% block content %}
 
 <!--<body style="background-color: #CBD5D4;">
@@ -83,7 +83,8 @@
   </div>
 </div>
 
-
+{% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
 </body>
 
 {% endblock %}

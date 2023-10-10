@@ -1,7 +1,5 @@
 <!doctype html>
-
 {% load static %}
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,11 +10,12 @@
     <link rel="stylesheet" href="{% static 'users/css/bootstrap-social.css' %}" type="text/css">
 
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-oBqDVmMz2fnFO9gybBTRuwVlfB6v3fA6Vj5w9zeTlCw3UuTzC5nkrQOmFN3Y18lN" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-WSNiERhpZ8FO+XZnAdBvy5z9zFEIetMMDz4tRM7IjH/1D21Aas3pXMbS5l5/lbE2" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-6De9TQfz8V8hQ33bVLN3Mq8sWJcG4l6W9ARsiYf9zU5Lr1W6f0A5njdj0t5foOcS" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-BO1C5Fs5F0xq+7H7I3sCIfJrCw5TF4Dz1lDmTRyjXz9NoY/K6ZIkjCQ8B/6I3aw" crossorigin="anonymous"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">-->
     <!--Font Link-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -25,11 +24,10 @@
     <!-- JS -->
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6501c64795430c0012210b90&product=inline-share-buttons&source=platform" async="async"></script>
     <script src="{% static 'users/js/navbar.js' %}" defer></script>
-
+    <!-- <script type="text/javascript" src="{% static 'live_chat/js/live_chat.js'}" defer></script> -->
   </head>
   <body>
   {% load static %}
-
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top navbar-custom" id="main-navbar" style ="background-color:#023047;">
         <a href="#" class="navbar-brand" >
           <!-- Logo Image -->
@@ -41,7 +39,7 @@
           <div class="collapse navbar-collapse" id="" >
             <div class="navbar-nav">
               <a class="nav-link" href="{% url 'home' %}">Home</a>
-<a class="nav-link" href="#">Visa Application</a>
+<a class="nav-link" href="{% url 'visa_application' %}">Visa Application</a>
 <a class="nav-link" href="{% url 'about_us' %}" >About Us</a>
 <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
             </div>
@@ -81,9 +79,20 @@
         {% endfor %}
       {% endif %}
       </div>
+
       {% block content %}
       {% endblock content %}
     </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+      -->
   </body>
 </html>

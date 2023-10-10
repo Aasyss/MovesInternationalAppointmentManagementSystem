@@ -1,5 +1,6 @@
 {% extends 'users/base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 <!--Username: delldell-->
 <!--Pwd: Password@123-->
@@ -77,6 +78,8 @@
         <p style="background-color: #023047; color: white; border-radius: 20px; padding: 10px;">Educational Background: Bachelor's in Information Technology</p>
         <p style="background-color: #023047; color: white; border-radius: 20px; padding: 10px;">Educational Background: Diploma of Information Technology </p>
     </section>
+    {% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
 </body>
 </html>
 

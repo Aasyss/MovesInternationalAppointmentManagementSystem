@@ -22,10 +22,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- JS -->
-      <script src="https://js.stripe.com/v3/"></script>
-      <script src="{% static 'payment/js/payment.js' %}" defer></script>
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6501c64795430c0012210b90&product=inline-share-buttons&source=platform" async="async"></script>
     <script src="{% static 'users/js/navbar.js' %}" defer></script>
+    <!-- <script type="text/javascript" src="{% static 'live_chat/js/live_chat.js'}" defer></script> -->
   </head>
   <body>
   {% load static %}
@@ -39,36 +38,35 @@
         <div class="container-fluid" >
           <div class="collapse navbar-collapse" id="" >
             <div class="navbar-nav">
-              <a class="nav-link" href="{% url 'home' %}" {% if request.resolver_match.url_name == 'home' %}
-                 style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>Home</a>
-<a class="nav-link" href="#">Visa Application</a>
-<a class="nav-link" href="{% url 'about_us' %}" {% if request.resolver_match.url_name == 'about_us' %}style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>About Us</a>
-<a class="nav-link" href="{% url 'contact_us' %}" {% if request.resolver_match.url_name == 'contact_us' %}style="background-color: white; font-weight: bold; color: black!important; border-radius: 6px;"{% endif %}>Contact Us</a>
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+<a class="nav-link" href="{% url 'visa_application' %}">Visa Application</a>
+<a class="nav-link" href="{% url 'about_us' %}" >About Us</a>
+<a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
             </div>
-
-            <div class="navbar-nav">
-              <form class="navbar-nav" id="registration">
-                {% if user.is_authenticated %}
-                  <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Welcome, {{ request.user.username }}</a>
-                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                      <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                      <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
-                    </ul>
-                  </div>
-                  {% else %}
-                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; "type="submit" id="header-links"> Create Account </a>
-                    <a href="{% url 'login' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links">Log In</a>
-                  {% endif %}
-                </form>
-              <form class="navbar-nav" id="registration">
-                    {% if user.is_authenticated %}
-                      <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
-                    {% else %}
-                      <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Book Appointment </a>
-                    {% endif %}
-              </form>
+<div class="navbar-nav ml-auto">
+    <form class="navbar-nav" id="registration">
+        {% if user.is_authenticated %}
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Welcome, {{ request.user.username }}</a>
+                <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                    <li><a class="dropdown-item" href="{% url 'live_chat:admin' %}"> Chat Admin </a></li>
+                </ul>
             </div>
+        {% else %}
+            <a href="{% url 'register' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;" id="header-links"> Sign Up </a>
+            <a href="{% url 'login' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14; margin-left: 10px;" id="header-links">Log In</a>
+        {% endif %}
+    </form>
+    <form class="navbar-nav" id="appointment-form">
+        {% if user.is_authenticated %}
+            <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;" id="header-links"> Book Appointment </a>
+        {% else %}
+            <a href="{% url 'book_appointment' %}" class="btn btn-primary btn-sm" style="color: white; background-color: #fd5e14;" id="header-links"> Book Appointment </a>
+        {% endif %}
+    </form>
+</div>
           </div>
         </div>
     </nav>
@@ -81,6 +79,7 @@
         {% endfor %}
       {% endif %}
       </div>
+
       {% block content %}
       {% endblock content %}
     </div>

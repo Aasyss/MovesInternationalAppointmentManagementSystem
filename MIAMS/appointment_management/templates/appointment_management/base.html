@@ -24,6 +24,7 @@
     <!-- JS -->
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6501c64795430c0012210b90&product=inline-share-buttons&source=platform" async="async"></script>
     <script src="{% static 'users/js/navbar.js' %}" defer></script>
+    <!-- <script type="text/javascript" src="{% static 'live_chat/js/live_chat.js'}" defer></script> -->
   </head>
   <body>
   {% load static %}
@@ -38,7 +39,7 @@
           <div class="collapse navbar-collapse" id="" >
             <div class="navbar-nav">
               <a class="nav-link" href="{% url 'home' %}">Home</a>
-<a class="nav-link" href="#">Visa Application</a>
+<a class="nav-link" href="{% url 'visa_application' %}">Visa Application</a>
 <a class="nav-link" href="{% url 'about_us' %}" >About Us</a>
 <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
             </div>
@@ -50,6 +51,7 @@
                 <ul class="dropdown-menu" aria-labelledby="userDropdown">
                     <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                     <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                    <li><a class="dropdown-item" href="{% url 'live_chat:admin' %}"> Chat Admin </a></li>
                 </ul>
             </div>
         {% else %}

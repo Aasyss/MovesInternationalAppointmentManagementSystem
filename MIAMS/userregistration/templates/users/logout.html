@@ -1,5 +1,6 @@
 
 {% extends 'users/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 
@@ -23,7 +24,8 @@
         <h3 style="text-align:center; color: #fb8500; margin-top: 20px;">Message From Our CEO</h3>
         <p style="text-align: justify;">"I started this for all those who dream of studying or migrating to beautiful Australia. Therefore, we have started building a strong bond with so many Australian universities for a long time. The purpose is to ensure the right info with the interested candidates, turn their dream into reality, and ultimately allow them to reach their future goals. of Australia and your visa is expired, you will need to wait for the arrival of the visa before entering Australia. Call us for any further queries."</p>
     </div>
-
+    {% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
 </body>
 
 {% endblock %}</title>
