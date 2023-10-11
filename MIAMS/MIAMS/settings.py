@@ -72,7 +72,6 @@ INSTALLED_APPS = [
     'book_appointment',
     'payment',
     'student',
-    'consultant',
     'crispy_forms',
     'crispy_bootstrap4',
     'django_social_share',
@@ -85,16 +84,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'django_crontab',
-    'messaging',
-    'chatbot',
     'paypal.standard.ipn',
     'corsheaders',
-    'live_suppport',
     'channels',
     'channels_redis',
     'live_chat',
-    # 'tailwind',
-    # 'theme',
 ]
 
 AUTHENTICATION_BACKENDS = [
