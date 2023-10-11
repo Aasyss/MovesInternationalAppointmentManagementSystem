@@ -1,0 +1,31 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Booked</title>
+</head>
+<body>
+    <p>Dear {{ student_name }},</p>
+    <p>Your appointment has been booked for {{ date }} from {{ start_time }} to {{ end_time }} with {{ consultant_name }}.</p>
+    <p>Thank you for choosing our service.</p>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Booked</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #CBD5D4; color: #023047; margin: 0; padding: 40px;">
+    <div style="background-color: #023047; padding: 30px; border-radius: 15px; max-width: 600px; margin: 50px auto; color: white;">
+        <p>Dear <span style="color: #FB8500;">{{ student_name }}</span>,</p>
+        <p>Your appointment has been booked for <span style="color: #FB8500;">{{ date }}</span> from <span style="color: #FB8500;">{{ start_time }}</span> to <span style="color: #FB8500;">{{ end_time }}</span> with <span style="color: #FB8500;">{{ consultant_name }}</span>.</p>
+        <p>Thank you for choosing our service.</p>
+    </div>
+</body>
+
+</html>
+

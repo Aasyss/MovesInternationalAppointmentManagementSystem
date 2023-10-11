@@ -1,0 +1,15 @@
+
+{% extends 'live_chat/base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Chat Admin</h1>
+    <hr style="margin-top: 8px;">
+
+    <div style="margin-top: 8px;">
+      <h2>Rooms</h2>
+        {% include 'live_chat/partials/room_list.html' %}
+    </div>
+    {% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+{% endblock %}
+

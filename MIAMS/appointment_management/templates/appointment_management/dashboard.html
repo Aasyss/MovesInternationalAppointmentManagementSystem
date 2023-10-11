@@ -1,9 +1,38 @@
-{% extends 'appointment_management/base.html' %}
-
+{% extends 'users/base.html' %}
+{% load static %}
 {% block content %}
-    <h1>Welcome to Your Dashboard</h1>
-    <p>Here, you can manage your appointments and availability.</p>
-    
-    <!-- Link to Availability Setup Page -->
-    <a href="{% url 'set_availability' %}">Set Availability</a>
+
+<body style="background-image: url('/static/users/images/consultant pic final.jpg'); background-size: cover; background-repeat: no-repeat;  height: 200px; width: 100%; background-color: #CBD5D4;">
+
+    <!-- Content at the top -->
+    <div style="display: flex; flex-direction: column; align-items: left; justify-content: left; height: 50vh; text-align: left; color:#FB8500; margin-left: 120px;">
+       <br>
+        <br>
+        <h1>Welcome to Your Dashboard</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+         <h4 style="color:black;">Here, you can manage your appointments and availability</h4>
+        <form method="post" action="{% url 'set_availability' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-lg" style="background-color: #FB8500;">Set Availability</button>
+    </form>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4 style="color:black;">"We're introducing a live chat feature for real-time support and assistance"</h4>
+        <form method="post" action="{% url 'set_availability' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn-lg" style="background-color: #FB8500;">Chat Now</button>
+    </form>
+
+    </div>
+    {% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+</body>
+
+
+
 {% endblock %}

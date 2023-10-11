@@ -1,17 +1,35 @@
 
 {% extends 'users/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
-    <h1>User Profile</h1>
 
-  <p>Username: {{ user_profile.user.username }}</p>
-  <p>Email: {{ user_profile.user.email }}</p>
-  <p>First Name: {{ user_profile.user.first_name }}</p>
-  <p>Last Name: {{ user_profile.user.last_name }}</p>
-<p>Picture: <img src="{{ user_profile.user.profile_picture }}" alt="Profile Picture"></p>
-  <!-- Add other fields as needed -->
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif;">
 
-  <a href="{% url 'profile' %}">Edit Profile</a>
+    <h1 style="text-align: center; margin-bottom: 30px;">User Profile</h1>
+
+    <div style="display: flex; justify-content: center; align-items: start; gap: 20px; padding: 10px 20px; background-color: #023047; border-radius: 20px; max-width: 800px; margin: 30px auto;">
+        <!-- Profile Picture -->
+        <img src="{{ user_profile.user.profile_picture }}" alt="Profile Picture" style="max-width: 200px; border-radius: 50%; border: 4px solid #fb8500;color:white;">
+
+        <!-- User Details with Bold Keys -->
+        <div style="color: white;">
+            <p><strong style="color: #fb8500;">Username:</strong> {{ user_profile.user.username }}</p>
+            <p><strong style="color: #fb8500;">Email:</strong> {{ user_profile.user.email }}</p>
+            <p><strong style="color: #fb8500;">First Name:</strong> {{ user_profile.user.first_name }}</p>
+            <p><strong style="color: #fb8500;">Last Name:</strong> {{ user_profile.user.last_name }}</p>
+        </div>
+    </div>
+
+    <!-- Edit Profile Link (centered below the image and details) -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'profile' %}" role="button" class="btn btn-primary btn-lg" style="background-color: #FB8500; color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px;">Edit Profile</a>
+    </div>
+    {% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+</body>
+
+
 {% endblock %}

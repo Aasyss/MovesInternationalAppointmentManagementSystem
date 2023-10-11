@@ -1,11 +1,31 @@
 
 {% extends 'users/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 
 {% block content %}
-    <div class="container">
-        <h1>You have been Logged out</h1>
-        <h5><a href="{% url 'login' %}">Login In Again</a></h5>
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif;">
+
+<br>
+<br>
+<br>
+
+    <div class="container" style="background-color: #023047; padding: 30px; border-radius: 15px; color: white; max-width: 800px; margin: auto;">
+        <h2 style="text-align:center; color:#fb8500; border-bottom: 2px solid white; padding-bottom: 10px; margin-bottom: 20px;">You have been Logged out</h2>
+
+        <div style="text-align:center; margin-bottom: 30px;">
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg" style="background-color: #FB8500; color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px;">Login In Again</a>
+        </div>
+
+        <h3 style="text-align:center; color: #fb8500;">About Our Agency</h3>
+        <p style="text-align: justify;">Immigration Services From Experienced Agents. Our aim is to maintain the market on a professional level with a view to a long- term partnership with the educational institutions. Moves International humble beginnings were with an initial team of one marketing staff. Since then, company has successfully grown in both the size of our team and in the number of students we have been able to assist over the years. Our sales and results have grown enormously, with growth exceeding 100% in each of the past two years. Company receives compliments and rave reviews from educational institutions, not only for outstanding growth in student enrolment numbers and matching increases in revenue generation, but also for our quality of service and high levels of student satisfaction.</p> <!-- Shortened for brevity -->
+
+        <h3 style="text-align:center; color: #fb8500; margin-top: 20px;">Message From Our CEO</h3>
+        <p style="text-align: justify;">"I started this for all those who dream of studying or migrating to beautiful Australia. Therefore, we have started building a strong bond with so many Australian universities for a long time. The purpose is to ensure the right info with the interested candidates, turn their dream into reality, and ultimately allow them to reach their future goals. of Australia and your visa is expired, you will need to wait for the arrival of the visa before entering Australia. Call us for any further queries."</p>
     </div>
+    {% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+</body>
+
 {% endblock %}</title>

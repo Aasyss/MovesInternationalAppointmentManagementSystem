@@ -11,6 +11,7 @@ from .forms import UserRegisterForm, ConsultantDetailsForm
 from .forms import ConsultantDetailsForm, CertificateForm
 from django.contrib.auth.views import LoginView
 
+
 def home(request):
     return render(request, 'users/home.html')
 
@@ -28,9 +29,11 @@ def register(request):
             role = form.cleaned_data['role']
             if role == 'student':
                 user.groups.add(Group.objects.get(name='student'))
+                user_profile, created = UserProfile.objects.get_or_create(user=request.user)
                 return HttpResponseRedirect(reverse('student_details'))
             elif role == 'consultant':
                 user.groups.add(Group.objects.get(name='consultant'))
+                user_profile, created = UserProfile.objects.get_or_create(user=request.user)
                 return HttpResponseRedirect(reverse('consultant_details'))
             username = form.cleaned_data.get('username')
             messages.success(request, f'Hi {username}, your account was created successfully')
@@ -111,3 +114,6 @@ def about_us(request):
 
 def contact_us(request):
     return render(request, 'users/contact_us.html')
+
+def visa_application(request):
+    return  render(request, 'users/visa_application.html')

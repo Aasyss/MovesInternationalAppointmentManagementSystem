@@ -11,22 +11,49 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+load_dotenv()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@%)c48_fdpwlj8ja^xx^(h-$kn9=xzd#-lcp6^d0)(imvzl20s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+HOST_EMAIL = os.environ.get('HOST_EMAIL')
+HOST_EMAIL_PASSWORD = os.environ.get('HOST_EMAIL_PASSWORD')
+GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ...
+if DEBUG:
+    MIDDLEWARE = [
+        # ...
+        'django.middleware.cache.UpdateCacheMiddleware',
+        # ...
+        'django.middleware.cache.FetchFromCacheMiddleware',
+        # ...
+    ]
+
 ALLOWED_HOSTS = []
 
+# # This can be a string or callable, and should return a base host that
+# # will be used when receiving callbacks and notifications from payment
+# # providers.
+# #
+# # Keep in mind that if you use `localhost`, external servers won't be
+# # able to reach you for webhook notifications.
+# PAYMENT_HOST = 'localhost:8000'
+#
+# # Whether to use TLS (HTTPS). If false, will use plain-text HTTP.
+# # Defaults to ``not settings.DEBUG``.
+# PAYMENT_USES_SSL = False
 
 # Application definition
 
@@ -43,6 +70,7 @@ INSTALLED_APPS = [
     'userregistration',
     'appointment_management',
     'book_appointment',
+    'payment',
     'student',
     'consultant',
     'crispy_forms',
@@ -50,10 +78,62 @@ INSTALLED_APPS = [
     'django_social_share',
     'djangobower',
     'faker',
-
-
-
+    'stripe',
+    'social_django',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'django_crontab',
+    'messaging',
+    'chatbot',
+    'paypal.standard.ipn',
+    'corsheaders',
+    'live_suppport',
+    'channels',
+    'channels_redis',
+    'live_chat',
+    # 'tailwind',
+    # 'theme',
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # ...
+    'social_core.backends.google.GoogleOAuth2',
+    'allauth.account.auth_backends.AuthenticationBackend',
+    # ...
+]
+
+# TAILWIND_APP_NAME = 'theme'
+#
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
+
+AUTHENTICATION_CLASSES = [
+    # ...
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+        'APP': {
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_CLIENT_SECRET,
+            'key': ''
+        }
+    }
+}
+
+SITE_ID = 2
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'logout'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=GOOGLE_CLIENT_ID
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=GOOGLE_CLIENT_SECRET
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +143,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",  # Add your domain here
+]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'MIAMS.urls'
 
@@ -78,7 +166,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
+                'social_django.context_processors.backends',
 
             ],
         },
@@ -86,6 +174,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'MIAMS.wsgi.application'
+
+
+ASGI_APPLICATION = "MIAMS.asgi.application" #routing.py will be created later
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': "channels.layers.InMemoryChannelLayer",
+        }
+    }
+
 
 
 # Database
@@ -154,3 +251,23 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 LOGIN_REDIRECT_URL = 'home'
 
 LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP host
+EMAIL_PORT = 587  # Replace with your SMTP port (usually 587 for TLS)
+EMAIL_USE_TLS = True  # Use TLS for secure connection
+EMAIL_HOST_USER = HOST_EMAIL  # Replace with your email
+EMAIL_HOST_PASSWORD = HOST_EMAIL_PASSWORD  # Replace with your email password
+DEFAULT_FROM_EMAIL = HOST_EMAIL  # Replace with your email
+
+
+CRONJOBS = [
+    ('0 */1 * * *', 'notifications.management.commands.send_notifications'),
+]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': '127.0.0.1:8000',
+    }
+}

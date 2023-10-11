@@ -1,13 +1,15 @@
-{% extends 'student/base.html' %}
-
+{% extends 'users/base.html' %}
+{% load static %}
 {% block content %}
+
+<!--<body style="background-color: #CBD5D4;">
   <h2>{{ consultant.user.username }}</h2>
   <h2>{{ consultant.user.get_full_name }}</h2>
   <p>Expertise: {{ consultant.expertise }}</p>
   <p>Bio: {{ consultant.bio }}</p>
   <p>Date of Birth: {{ consultant.date_of_birth }}</p>
   <p>Education History: {{ consultant.education_history }}</p>
-  <p>Profile Picture:</p>
+  <p>Profile Picture:{{consultant.profile_picture}}</p>
   <img src="{{ consultant.profile_picture.url }}" alt="{{ consultant.user.username }}'s Profile Picture">
 
 
@@ -41,5 +43,52 @@
 
       </li>
       {% endfor %}
-    </ul>
+    </ul></body> -->
+<header  style="background-color: #CBD5D4;text-align:center;">
+    <h2 class="display-4">Consultant Details</h2>
+</header>
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif; margin: 0; padding: 20px;">
+
+  <!-- Consultant Details -->
+  <div style="background-color: #023047; padding: 20px; border-radius: 10px; color: white; margin-bottom: 30px;text-align:center;">
+      <!--<h2 style="color: #fb8500; margin-top: 0;">{{ consultant.user.username }}</h2>-->
+      <h2 style="color: #fb8500; margin-top: 0;">{{ consultant.user.get_full_name }}</h2>
+      <p><strong>Expertise:</strong> {{ consultant.expertise }}</p>
+
+      <!-- Profile Picture Display -->
+        <div style="display: flex; justify-content: center; align-items: center; height: 100%; text-align:center; margin-top: 20px;">
+          <img src="{{ consultant.profile_picture.url }}" alt="{{ consultant.user.username }}'s Profile Picture" style="border-radius: 50%; width: 100px; height: 100px;">
+      </div>
+      <strong style="color: #fb8500;">Bio:</strong>
+      <p> {{ consultant.bio }}</p>
+      <strong style="color: #fb8500;">Education History:</strong>
+      <p> {{ consultant.education_history }}</p>
+    </div>
+    <div style="background-color: #023047; padding: 20px; border-radius: 10px; color: white; margin-bottom: 30px;text-align:center;">
+      <h5 style="color: #fb8500;">Availabilities</h5>
+      <ul style="list-style-type: none; padding: 0;">
+      {% for availability in availabilities %}
+          <li style="margin-bottom: 20px;">
+            <p><strong>Start Date:</strong> {{ availability.start_date }}</p>
+            <p><strong>Monday:</strong> {{ availability.monday_start_time }} - {{ availability.monday_end_time }}</p>
+            <p><strong>Tuesday:</strong> {{ availability.tuesday_start_time }} - {{ availability.tuesday_end_time }}</p>
+            <p><strong>Wednesday:</strong> {{ availability.wednesday_start_time }} - {{ availability.wednesday_end_time }}</p>
+            <p><strong>Thursday:</strong> {{ availability.thursday_start_time }} - {{ availability.thursday_end_time }}</p>
+            <p><strong>Friday:</strong> {{ availability.friday_start_time }} - {{ availability.friday_end_time }}</p>
+            <p><strong>Saturday:</strong> {{ availability.saturday_start_time }} - {{ availability.saturday_end_time }}</p>
+            <p><strong>Sunday:</strong> {{ availability.sunday_start_time }} - {{ availability.sunday_end_time }}</p>
+          </li>
+      {% endfor %}
+      </ul>
+
+       <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'book_appointment' %}">Book Appointment</a>
+
+  </div>
+  
+</div>
+
+{% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+</body>
+
 {% endblock %}

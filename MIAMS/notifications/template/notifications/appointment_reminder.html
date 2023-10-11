@@ -1,0 +1,34 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Reminder</title>
+</head>
+<body>
+    <p>Dear {{ name }},</p>
+    <p>Your appointment is scheduled for {{ appointment_time }}. Please be prepared.</p>
+    <p>Best regards,</p>
+    <p>Your App</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Reminder</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #CBD5D4; color: #023047; margin: 0; padding: 40px;">
+    <div style="background-color: #023047; padding: 30px; border-radius: 15px; max-width: 600px; margin: 50px auto; color: white;">
+        <p>Dear <span style="color: #FB8500;">{{ name }}</span>,</p>
+        <p>Your appointment is scheduled for <span style="color: #FB8500;">{{ appointment_time }}</span>. Please be prepared.</p>
+        <p>Best regards,</p>
+        <p>Your App</p>
+    </div>
+</body>
+
+</html>

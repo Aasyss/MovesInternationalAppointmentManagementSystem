@@ -1,0 +1,315 @@
+{% extends 'users/base.html' %}
+{% load social_share %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Header -->
+  <div style="
+      width: 100%;
+      height: 100%;
+      padding-left: 64px;
+      padding-right: 64px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 868px;
+      display: inline-flex;">
+    <div style="
+        align-self: stretch;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 24px;
+        display: inline-flex;">
+      <div style="
+          justify-content: flex-start;
+          align-items: center;
+          gap: 8px;
+          display: flex;">
+          <i class="fas fa-phone"></i>
+
+        <div
+          style="
+            text-align: center;
+            color: black;
+            font-size: 14px;
+            font-family: Inter;
+            font-weight: 500;
+            line-height: 13px;
+            word-wrap: break-word;
+          "
+        >
+          (02) 8068 9051
+        </div>
+      </div>
+      <div
+        style="
+          justify-content: flex-start;
+          align-items: center;
+          display: flex;">
+        <i class="fas fa-envelope"></i>
+
+        <div style="width: 16px; height: 16px; position: relative">
+          <div
+            style="
+              width: 16px;
+              height: 12px;
+              left: 0px;
+              top: 2px;
+              position: absolute;
+            "
+          >
+            <div
+              style="
+                width: 16px;
+                height: 12px;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+
+              "
+            ></div>
+            <div
+              style="
+                width: 14px;
+                height: 4px;
+                left: 1px;
+                top: 2px;
+                position: absolute;
+
+              "
+            ></div>
+          </div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            color: black;
+            font-size: 14px;
+            font-family: Inter;
+            font-weight: 500;
+            line-height: 13px;
+            word-wrap: break-word;
+          "
+        >
+          info@mieducation.com.au
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        align-self: stretch;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 16px;
+        display: inline-flex;
+      "
+    >
+      <div
+        style="
+          width: 16px;
+          height: 16px;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+        "
+      >
+        <div
+          style="
+            width: 16px;
+            height: 16px;
+            position: relative;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            display: flex;
+          "
+        >
+<!--&lt;!&ndash;          <div style="width: 16px; height: 13px;">&ndash;&gt;-->
+<!--&lt;!&ndash;            <img&ndash;&gt;-->
+<!--            style="-->
+<!--              width: 16px;-->
+<!--              height: 15.9px;-->
+<!--              left: 0px;-->
+<!--              top: 0px;-->
+<!--              position: absolute;-->
+<!--            "-->
+<!--            src="{% static 'users/images/twitter.png' %}"-->
+<!--          />-->
+<!--          </div>-->
+        </div>
+      </div>
+      <div style="width: 16px; height: 16px; position: relative">
+               <a href="https://www.instagram.com/moves_international_/" target="_blank">
+        <img
+          style="
+            width: 16px;
+            height: 15.9px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+          "
+          src="{% static 'users/images/instagram.png' %}"
+        />
+               </a>
+      </div>
+
+      <div style="width: 16px; height: 16px; position: relative">
+        <div
+          style="
+            width: 16px;
+            height: 16px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+          "
+        >
+            <a href="https://www.facebook.com/mieducationsydney/" target="_blank">
+
+        <img
+        style="
+          width: 16px;
+          height: 15.9px;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+        "
+        src="{% static 'users/images/facebook.png' %}"
+      />
+            </a>
+        </div>
+      </div>
+      <div style="width: 16px; height: 16px; position: relative">
+        <div
+          style="
+            width: 15.33px;
+            height: 10.67px;
+            left: 0.33px;
+            top: 0px;
+            position: absolute;
+          "
+        >
+             <a href="https://www.youtube.com/channel/UCkYOrSrqLljTOvP37t6ZAjQ/" target="_blank">
+            <img
+        style="
+          width: 16px;
+          height: 15.9px;
+          left: 0px;
+          top: 0px;
+          position: absolute;
+        "
+        src="{% static 'users/images/youtube.png' %}"
+      />
+             </a>
+          <div
+            style="
+              width: 4.13px;
+              height: 2.52px;
+              left: 6.09px;
+              top: 3.04px;
+              position: absolute;
+            "
+          >
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<hr style="border-color: black; border-width: 1px;">
+
+
+<header  style="background-color: #CBD5D4;text-align:center;">
+    <h2 class="display-4">Visa Application</h2>
+</header>
+<body style="background-color: #CBD5D4;">
+<br>
+<br>
+
+ <div style="background-color: #023047; color: #CBD5D4; padding: 20px; margin-top: 20px; border-radius: 10px;">
+
+            <h2 style="border-bottom: 2px solid #fb8500; padding-bottom: 10px; color: #FB8500;">Student Visa Extension</h2>
+            <p style="margin-top: 15px;">Let me guess, you or someone really close to you are studying in Australia, and the visa has got expired or going to be. Well, in such circumstances, it’s obvious looking for “how to get a student visa extension”. Moves International can help you to get an extended visa by which you can continue your study or admit into a new course.</p>
+
+
+<p> Moves International gives you a quick student visa extension Australia. If you want to re-enter the country or planning to stay more to continue studying, you must extend your visa before it expires. Just check on the expiry date and do not miss to contact us before the date. Well, if you missed it by any chance, don’t worry. Everything has a solution. Just let us know without wasting any more time.</p>
+
+<p>Moves International will help you to Extend Your Visa
+For a student visa extension, you need to apply for a new visa in Australia. If you missed it by any chance, you are at risk of deportation to your country. The paperwork sometimes becomes too long for a visa extension. This may delay your schedule if you do it yourself.</P>
+
+<h3>Conditions of Applying for a Student Visa Extension</h3>
+        <ul>
+            <li>Admitting into a new course</li>
+            <li>Retake of any old course</li>
+            <li>Thesis paper submission</li>
+            <li>Visa termination from the home affairs administration</li>
+        </ul>
+<p>Why not let us handle it, and you just go and relax? If you are a candidate from outside of Australia and your visa is expired, you will need to wait for the arrival of the visa before entering Australia. Call us for any further queries.</P>
+<!-- ... continue with the rest of your content ... -->
+        </div>
+<br>
+<br>
+
+ <div style="background-color: #023047; color: #CBD5D4; padding: 20px; margin-top: 20px; border-radius: 10px;">
+
+            <h2 style="border-bottom: 2px solid #fb8500; padding-bottom: 10px; color: #FB8500;">485 Visa Application</h2>
+            <p style="margin-top: 15px;">485 Visa Application is the process of asking permission to stay longer in Australia. The cause can be either study or work. Once you have finished your studies with the present visa, you might need an extension for further studies or if you want to live in Australia.</p>
+
+
+<p> A lot of students apply for subclass 485 for their permanent residence part. It is a temporary graduate visa that allows you to increase the duration of your staying in Australia for postgraduate or professional work. The Australian govt. Permit it for two years if everything seems fine. Stay up-to-date through the visa website for 485 temporary graduate visa application procedures online. </p>
+
+<p>This visa is for those international students who want to live more in Australia, either for permanent residence or further studies. If you have recently graduated with qualifications and skills relevant to the Australian job market, you might get a visa to work, study, or live in Australia temporarily.</P>
+
+<h3> If you apply by following the requirements and match with all the eligibility factors, they will allow you for subclass 485.</h3>
+        <ul>
+            <li>Under 50 years of age</li>
+            <li>A recent criterion in a CRICOS-registered course</li>
+            <li>Need to meet other requirements of the relevant stream</li>
+            <li>An eligible visa holder</li>
+        </ul>
+<h3> 485 Visa Application Has Four Streams.</h3>
+        <ul>
+            <li>Graduate Work stream</li>
+            <li>Post-Study Work stream</li>
+            <li>Second Post-Study Work stream</li>
+            <li>Replacement stream</li>
+        </ul>
+        </div>
+<br>
+<br>
+
+
+ <div style="background-color: #023047; color: #CBD5D4; padding: 20px; margin-top: 20px; border-radius: 10px;">
+
+            <h2 style="border-bottom: 2px solid #fb8500; padding-bottom: 10px; color: #FB8500;">OSHC and OVHC</h2>
+            <p style="margin-top: 15px;">If you plan to go to Australia for study, travel, or work, OSHC and OVHC is a must thing to ensure because that’s how it works. You can’t skip overseas student health coverage if you are an international student in Australia. Moves International will help you connect to some of the best insurance companies to secure you. It is not expected to have a vulnerable service regarding the health insurance policy.</p>
+
+
+<p> OSHC is a must for student visas to stay in Australia. Those who are about to continue their study there must have OSHC, and the same applies to visitors or tourists. That is called overseas visitors’ health cover or OVHC. </p>
+
+<p>For anyone who comes to Australia to visit or for travel purposes, OVHC is a must for them. It says that you need appropriate health insurance before getting into Australia for your safety. Health insurance will allow you to take medical services throughout your stay in this country. Connect with us to get OVHC from one of the best health insurance agencies.</P>
+
+<h3> The following visa categories cover OVHC.</h3>
+        <ul>
+            <li>Visitors visas (Subclass 300, 580, 590, 600, 601)/li>
+            <li>Working holiday visas (subclass 417 and 562)</li>
+            <li>Bridging visas</li>
+            <li>Working visas (Subclass 401, 401, 476, 482, 485, 489)</li>
+        </ul>
+<p>If you have recently completed your graduate program and applied for a temporary visa which is subclass 485, we can help you switch from OSHC to OVHC real quick.</p>
+ </div>
+</body>
+<br>
+<br>
+<footer>
+ <div class="text-center p-3" style="background-color:#023047; color:white;">
+        © 2023 Copyright:
+        <a class="text-white" href="home.html">Moves International</a>
+      </div>
+</footer>
+{% include "live_chat/partials/chat_bubble.html" %}
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+{% endblock %}
