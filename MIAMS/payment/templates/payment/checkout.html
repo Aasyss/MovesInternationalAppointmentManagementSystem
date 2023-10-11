@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-    <h1>Review Your Appointment</h1>
+    <!--<h1>Review Your Appointment</h1>
 
     <h2>Appointment Details</h2>
     <p>Consultant: {{ appointment.consultant }}</p>
@@ -22,6 +22,41 @@
     </section>
 
     {% include "live_chat/partials/chat_bubble.html" %}
-    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script> -->
+
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif; margin: 0; padding: 20px;">
+
+<br>
+<br>
+
+<div style="background-color: #023047; padding: 30px; border-radius: 10px; color: white; max-width: 600px; margin: auto;">
+
+    <h1 class="title" style="text-align:center; color: #fb8500;">Review Your Appointment</h1>
+    <hr style="border-top: 2px solid #fb8500; margin-bottom: 20px;">
+
+    <h2 class="subtitle" style="color: #fb8500;">Appointment Details</h2>
+
+    <p><strong>Consultant:</strong> {{ appointment.consultant }}</p>
+    <p><strong>Date:</strong> {{ appointment.appointment_datetime|date:"F j, Y" }}</p>
+    <p><strong>Start Time:</strong> {{ appointment.appointment_start_time|time:"g:i A" }}</p>
+    <p><strong>End Time:</strong> {{ appointment.appointment_end_time|time:"g:i A" }}</p>
+    <p><strong>Amount:</strong> ${{ appointment.amount }}</p>
+
+    <section class="section" style="background-color: #023047; border-radius: 8px; margin-top: 20px;">
+        <div class="container" style="text-align: center;">
+            <button class="button is-primary" id="submitBtn" style="background-color: #FB8500; border: none;">Purchase!</button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/js/bulma.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{% static 'payment/js/payment.js' %}"></script>
+</div>
+
+{% include "live_chat/partials/chat_bubble.html" %}
+<script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+
+</body>
+
 {% endblock %}
 

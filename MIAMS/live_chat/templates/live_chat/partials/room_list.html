@@ -1,17 +1,18 @@
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
-            {% for room in rooms %}
-                <div style="padding: 16px; border-radius: 8px; {% if room.status == 'waiting' %}background-color: #D1FAE5;{% elif room.status == 'active' %}background-color: #FEEBC8;{% else %}background-color: #F7FAFC;{% endif %};">
-                    <h3 style="margin-bottom: 4px; font-size: large;"><b>Chat Name:</b> {{room.client}} <br></h3>
-                      <p>
-<!--                          <b>ID:</b> {{room.uuid}} <br>-->
-                          <b>Name:</b> {{room.client}} <br>
-                          <b>Status:</b> {{room.get_status_display}} <br>
-                          <b> Created:</b> {{room.created_at|timesince}} ago<br>
-<!--                          <b>Agent:</b> {% firstof room.agent.name %}-->
-                      </p>
+    {% for room in rooms %}
+        <div style="padding: 16px; border-radius: 8px; {% if room.status == 'waiting' %}background-color: #D1FAE5;{% elif room.status == 'active' %}background-color: #FEEBC8;{% else %}background-color: #F7FAFC;{% endif %};">
+            <h3 style="margin-bottom: 4px; font-size: large;"><b>Chat Name:</b> {{room.client}} <br></h3>
+              <p>
+                 <!--<b>ID:</b> {{room.uuid}}-->
+                  <b>Name:</b> {{room.client}} <br>
+                  <b>Status:</b> {{room.get_status_display}} <br>
+                  <b> Created:</b> {{room.created_at|timesince}} ago<br>
+                <!--<b>Agent:</b> {% firstof room.agent.name %}-->
+              </p>
 
-                      <a href="{% url 'live_chat:room' room.uuid %}" style="margin-top: 4px; display: inline-block; padding: 8px 24px; background-color: #03407D; color: #ffffff; border-radius: 8px;">View Chat</a>
-                      <a href="{% url 'live_chat:delete_room' room.uuid %}" style="margin-top: 4px; display: inline-block; padding: 8px 24px; background-color: red; color: #ffffff; border-radius: 8px;">Delete</a>
-                </div>
-            {% endfor %}
+              <a href="{% url 'live_chat:room' room.uuid %}" style="margin-top: 4px; display: inline-block; padding: 8px 24px; background-color: #03407D; color: #ffffff; border-radius: 8px;">View Chat</a>
+              <a href="{% url 'live_chat:delete_room' room.uuid %}" style="margin-top: 4px; display: inline-block; padding: 8px 24px; background-color: red; color: #ffffff; border-radius: 8px;">Delete</a>
         </div>
+    {% endfor %}
+</div>
+

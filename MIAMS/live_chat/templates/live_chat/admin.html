@@ -2,14 +2,29 @@
 {% extends 'live_chat/base.html' %}
 {% load static %}
 {% block content %}
-    <h1>Chat Admin</h1>
-    <hr style="margin-top: 8px;">
 
-    <div style="margin-top: 8px;">
-      <h2>Rooms</h2>
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif; margin: 0; padding: 20px;">
+
+<br>
+
+    <div style="text-align: center; background-color: #023047; padding: 20px; border-radius: 8px; color: white; max-width: 800px; margin: auto;">
+        <h1 style="font-size: 1.5rem; text-align: center; color: #fb8500;">Chat Admin</h1>
+    </div>
+
+    <hr style="margin: 24px 0; border-color: #023047;">
+
+    <div style="background-color: #CBD5D4; padding: 20px; border-radius: 8px; color: #023047; max-width: 800px; margin: 20px auto;">
+        <h2 style="text-align: center; color: #Fb8500; margin-bottom: 20px; background-color:#023047;">Rooms</h2>
         {% include 'live_chat/partials/room_list.html' %}
     </div>
-    {% include "live_chat/partials/chat_bubble.html" %}
+
+    <div style="max-width: 800px; margin: 20px auto;">
+        {% include "live_chat/partials/chat_bubble.html" %}
+    </div>
+
     <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
+
+</body>
+
 {% endblock %}
 

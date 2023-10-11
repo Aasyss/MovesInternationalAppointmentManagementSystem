@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 {% load chatextras %}
-<h1 style="font-size: 1.5rem;">Room "{{room.uuid}}"</h1>
+<!--<h1 style="font-size: 1.5rem;">Room "{{room.uuid}}"</h1>
 
 <hr style="margin: 24px 0;">
 
@@ -11,7 +11,7 @@
   <b> Started:</b> {{room.created_at|timesince}}<br>
   <b>Status:</b> {{room.get_status_display}}<br>
   <b>Page:</b> {{room.url}}<br>
-<!--  <b>Agent:</b> {% firstof room.created_by.name %}-->
+  <b>Agent:</b> {% firstof room.created_by.name %}
 </p>
 
 <hr style="margin: 24px 0;">
@@ -53,7 +53,66 @@
     {{room.uuid|json_script:'room_uuid'}}
     {{request.user.username|json_script:'user_name'}}
     {{request.user.id|json_script:'user_id'}}
+    <script src="{% static 'live_chat/js/main_admin.js' %}"></script>-->
+
+<body style="background-color: #CBD5D4; font-family: Arial, sans-serif; margin: 0; padding: 20px;">
+
+    <h1 style="font-size: 1.5rem; text-align: center; color: #023047;">Room "{{room.uuid}}"</h1>
+    <hr style="margin: 24px 0; border-color: #023047;">
+
+    <div style="background-color:#CBD5D4; padding: 20px; border-radius: 8px; color: #023047;">
+        <p>
+            <b>Name:</b> {{room.client}}<br>
+            <b>Started:</b> {{room.created_at|timesince}} ago<br>
+            <b>Status:</b> {{room.get_status_display}}<br>
+            <b>Page:</b> {{room.url}}<br>
+        </p>
+    </div>
+
+    <hr style="margin: 24px 0; border-color: #023047;">
+
+    <div id="chat_log" style="margin-bottom: 16px; padding: 16px; background-color: #f0f0f0; border-radius: 8px; height: 300px; overflow-y: scroll; border: 1px solid #023047;">
+        {% for message in room.messages.all %}
+       <div style="flex: 1; max-width: 300px; margin-top: 2px; display: flex; {% if message.created_by %}margin-left: auto; justify-content: flex-end;{% endif %}">
+      {% if not message.created_by %}
+        <div style="flex-shrink: 0; font-size: 30px; height: 40px; width: 40px; padding:0.75rem; border-radius: 50%; background-color: #ccc; text-align: center; justify-content: center; overflow: hidden;">
+          {{message.sent_by|initials}}
+        </div>
+      {% endif %}
+
+      <div>
+        <div style=" text-align: center; height: 40px; padding: 0.75rem;border-radius: 0 0.375rem 0.375rem 0; border-radius: 0 6px 6px 0; {% if message.created_by %}background-color: #0056b3; color: #ffffff;{% else %}background-color: #ccc;{% endif %};">
+          <p style="text-align: center; font-size: small; ">{{message.body}}</p>
+        </div>
+        <span style="font-size: 0.75rem; color: #6b7280; margin: 0; align-self: flex-end;">{{message.created_at|timesince}} ago.</span>
+      </div>
+      {% if message.created_by %}
+        <div style="flex-shrink: 0; font-size: 30px; height: 40px; width: 40px; padding:0.75rem; border-radius: 50%; background-color: #ccc; text-align: center; justify-content: flex-end; overflow: hidden;">
+          {{message.sent_by|initials}}
+        </div>
+      {% endif %}
+    </div>
+
+        {% endfor %}
+    </div>
+
+    {% if room.status == 'active' %}
+        <input type="text" name="body" id="chat_message_input" style="width: 100%; margin-bottom: 1rem; padding: 1rem; background-color: white; border: 1px solid #023047; border-radius: 1rem;" placeholder="Type your message...">
+        <button id="chat_message_submit" style="width: 100%; padding: 0.75rem; background-color: #fb8500; border: none; border-radius: 1rem; color: #023047; cursor: pointer;">Send</button>
+    {% endif %}
+
+    {% if room.status == 'active' %}
+    <!-- scripts remain unchanged -->
+    {{room.uuid|json_script:'room_uuid'}}
+    {{request.user.username|json_script:'user_name'}}
+    {{request.user.id|json_script:'user_id'}}
     <script src="{% static 'live_chat/js/main_admin.js' %}"></script>
+    {% endif %}
+
+
+
   {% endif %}
+    </body>
   {% endblock %}
+
 
