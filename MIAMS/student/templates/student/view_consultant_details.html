@@ -57,11 +57,14 @@
 
       <!-- Profile Picture Display -->
         <div style="display: flex; justify-content: center; align-items: center; height: 100%; text-align:center; margin-top: 20px;">
-    <img src="{{ consultant.profile_picture.url }}" alt="{{ consultant.user.username }}'s Profile Picture" style="border-radius: 50%; width: 100px; height: 100px;">
-</div>
-
-
-
+          <img src="{{ consultant.profile_picture.url }}" alt="{{ consultant.user.username }}'s Profile Picture" style="border-radius: 50%; width: 100px; height: 100px;">
+      </div>
+      <strong style="color: #fb8500;">Bio:</strong>
+      <p> {{ consultant.bio }}</p>
+      <strong style="color: #fb8500;">Education History:</strong>
+      <p> {{ consultant.education_history }}</p>
+    </div>
+    <div style="background-color: #023047; padding: 20px; border-radius: 10px; color: white; margin-bottom: 30px;text-align:center;">
       <h5 style="color: #fb8500;">Availabilities</h5>
       <ul style="list-style-type: none; padding: 0;">
       {% for availability in availabilities %}
@@ -81,6 +84,7 @@
        <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'book_appointment' %}">Book Appointment</a>
 
   </div>
+  
 </div>
 
 {% include "live_chat/partials/chat_bubble.html" %}

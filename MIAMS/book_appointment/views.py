@@ -1,8 +1,11 @@
 #book_Appointment/view.py
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 import stripe
 from django.contrib.auth.decorators import login_required
+
+from userregistration.models import UserProfile
 from .forms import AppointmentBookingForm
 from .models import Appointment
 from appointment_management.models import Setup_Availability
@@ -18,6 +21,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 @login_required
 def book_appointment(request):
     day_of_week_name = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    
     if request.method == 'POST':
         form = AppointmentBookingForm(request.POST)
         if form.is_valid():
@@ -77,6 +81,18 @@ def book_appointment(request):
         form = AppointmentBookingForm()
 
     return render(request, 'book_appointment/book_appointment.html', {'form': form})
+
+def consultant_details(request, consultant_id):
+    consultant = UserProfile.objects.get(id=consultant_id)
+    availabilities = Setup_Availability.objects.filter(consultant=consultant)
+    data = {
+        'first_name': consultant.user.first_name,
+        'last_name': consultant.user.last_name,
+        'email': consultant.user.email,
+        'availabilities': availabilities,
+        # Add more data as needed
+    }
+    return JsonResponse(data)
 
 def appointment_success(request):
     return render(request, 'book_appointment/appointment_success.html')

@@ -1,3 +1,4 @@
+{% extends 'live_chat/base.html' %}
 {% load static %}
 {% block content %}
 {% load chatextras %}
@@ -14,7 +15,7 @@
 </p>
 
 <hr style="margin: 24px 0;">
-
+{% csrf_token %}
 <div id="chat_log" style="margin-bottom: 16px; padding: 16px; background-color: #f0f0f0; border-radius: 8px; height: 300px; overflow-y: scroll; display: flex; flex-direction: column; flex-grow: 1;">
   {% for message in room.messages.all %}
     <div style="flex: 1; max-width: 300px; margin-top: 2px; display: flex; {% if message.created_by %}margin-left: auto; justify-content: flex-end;{% endif %}">
@@ -47,15 +48,12 @@
 
 {% endif %}
 
+    {% if room.status == 'active' %}
+
+    {{room.uuid|json_script:'room_uuid'}}
+    {{request.user.username|json_script:'user_name'}}
+    {{request.user.id|json_script:'user_id'}}
+    <script src="{% static 'live_chat/js/main_admin.js' %}"></script>
+  {% endif %}
   {% endblock %}
 
-{% block scripts %}
-
-{% if room.status == 'active' %}
-
-  {{room.uuid|json_script:'room_uuid'}}
-  {{request.user.username|json_script:'user_name'}}
-  {{request.user.id|json_script:'user_id'}}
-  <script src="{% static 'live_chat/js/main_admin.js' %}"></script>
-{% endif %}
-{% endblock %}

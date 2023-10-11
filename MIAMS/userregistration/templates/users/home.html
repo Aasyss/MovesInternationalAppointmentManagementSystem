@@ -69,9 +69,10 @@
             font-weight: 500;
             line-height: 13px;
             word-wrap: break-word;
+            
           "
         >
-          (02) 8068 9051
+          (02)-8068-9051
         </div>
       </div>
       <div
@@ -272,21 +273,21 @@
         <p>
           <h2   style="color: black ";><strong>Proud to launch With New Initiatives As Moves International</strong> </h2>
         </p>
-            <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" >Book Appointment</a>
+            <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'book_appointment' %}" >Book Appointment</a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100 h-50"  src="{% static 'users/images/image2.png' %}" alt="Second slide" />
         <div class="carousel-caption d-none d-md-block">
           <h2 style="color: black ";>Start  Your <strong>Australian Education Journey </strong> with us</h2>
-           <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" >Book Appointment</a>
+           <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'book_appointment' %}" >Book Appointment</a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100 h-50" src="{% static 'users/images/image3.png' %}" alt="Third slide" />
         <div class="carousel-caption d-none d-md-block">
           <h2 style="color: black ";>We help students to make the MOVE THAT MATTERS</h2>
-             <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" >Book Appointment</a>
+             <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'book_appointment' %}" >Book Appointment</a>
         </div>
       </div>
     </div>
@@ -344,7 +345,7 @@
             <h5 class="card-title">Moves Internation Student Counselling</h5>
             <p class="card-text">
               Student counseling is a vital aspect. If you are considering studying abroad, we can help you. It’s not easy to make the right decision without knowing the details of the courses. Our experts will help you choose the best courses and make the right decisions. If you make the right choice, your career will be an absolute feat. Just share your thoughts and plans with us, and we will give you the most suitable options for your future. </p>
-            <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" > Book Appointment</a>
+            
           </div>
         </div>
       </div>
@@ -357,7 +358,7 @@
             <h5 class="card-title">University Admission in Australia 2023</h5>
             <p class="card-text">
               Every college and university has opening and closing dates for University Admission in Australia. You must stay updated on their deadlines. Moreover, Australia university admission requirements include seat availability as well. Moves International helps you by giving all the required information about your selected institution for admission. If you still need to look at one of the best universities, and lead you to your goal.</p>
-            <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}"  >Book Appointment</a>
+            
           </div>
         </div>
       </div>
@@ -370,7 +371,7 @@
               <h5 class="card-title">Who should join Professional Year</h5>
               <p class="card-text">
                 Professional year in Australia is in the highest demand for freshers to apply for jobs in the market. It runs for 12 months to make you fit for Australian industries where you can use your knowledge professionally. Engineering, computer science, and accounting are in high demand for Australian job industries. If you graduated from any of these subjects, be prepared for a professional year program.</p>
-              <a class="btn btn-primary" style="background-color: #FB8500;" href="{% url 'profile' %}" >Book Appointment</a>
+              
             </div>
         </div>
       </div>
@@ -465,8 +466,6 @@
 </div>
   {% include "live_chat/partials/chat_bubble.html" %}
     <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script>
-
-
   </body>
 
 <br>
@@ -480,7 +479,7 @@
         <section class="">
           <p class="d-flex justify-content-center align-items-center">
             <span class="me-3">Make a booking </span>
-               <a class="btn btn-primary" style="background-color: #FB8500; margin-left: 10px;" href="{% url 'profile' %}" >Book Appointment</a>
+               <a class="btn btn-primary" style="background-color: #FB8500; margin-left: 10px;" href="{% url 'book_appointment' %}" >Book Appointment</a>
           </p>
         </section>
         <!-- Section: CTA -->

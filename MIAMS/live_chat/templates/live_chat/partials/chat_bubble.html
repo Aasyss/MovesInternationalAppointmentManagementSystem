@@ -4,6 +4,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-BO1C5Fs5F0xq+7H7I3sCIfJrCw5TF4Dz1lDmTRyjXz9NoY/K6ZIkjCQ8B/6I3aw" crossorigin="anonymous"></script>
 
 <div id="chat" style="max-width: 300px; position: fixed; right: 2px; bottom: 2px; padding: 0.1rem; background-color: white; border: 1px solid #ccc;">
+  {% csrf_token %}
   <div id="chat_icon" style="width: 50px; display: flex; align-items: center;">
     <button id="chat_open" style="width: 50px; display: flex; align-items: center;">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="">
@@ -24,7 +25,6 @@
     <input type="text" name="body" id="chat_message_input" style="width: 100%; margin-bottom: 1rem; padding: 1rem; background-color: #f0f0f0; border-radius: 1rem;" placeholder="Type your message...">
     <button id="chat_message_submit" style="padding: 0.5rem 1rem; background-color: #e53935; border: none; border-radius: 1rem; color: white;">Send</button>
   </div>
-
 
 </div>
 
