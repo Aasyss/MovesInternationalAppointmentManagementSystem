@@ -27,12 +27,19 @@ session operates in a virtual environment set up by `virtualenv2`.
 Once `pip` has finished downloading the dependencies:
 Copy your .env file from the which containd following keys:
 SECRET_KEY=
+
 STRIPE_PUBLIC_KEY=
+
 STRIPE_SECRET_KEY=
+
 HOST_EMAIL=
+
 HOST_EMAIL_PASSWORD=
+
 GOOGLE_CLIENT_ID=
+
 GOOGLE_CLIENT_SECRET=
+
 
 After that, follow the following steps below:
 ```sh
