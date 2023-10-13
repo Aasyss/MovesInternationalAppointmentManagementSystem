@@ -12,8 +12,11 @@ $ cd MovesInternationalAppointmentManagementSystem
 Create a virtual environment to install dependencies in and activate it:
 
 ```sh
-$ virtualenv2 --no-site-packages venv
-$ source venv/bin/activate
+$ py venv -m venv
+```
+Staying on MovesInternationalAppointmentSystem
+```sh
+$ venv/bin/activate
 ```
 
 Then install the dependencies:
@@ -22,7 +25,7 @@ Then install the dependencies:
 (venv)$ pip install -r requirements.txt
 ```
 Note the `(venv)` in front of the prompt. This indicates that this terminal
-session operates in a virtual environment set up by `virtualenv2`.
+session operates in a virtual environment set up by `virtualenv` using python.
 
 Once `pip` has finished downloading the dependencies:
 Copy your .env file from the which containd following keys:
