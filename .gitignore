@@ -156,7 +156,6 @@ cython_debug/
 *.pot
 *.pyc
 __pycache__
-media
 
 # Backup files #
 *.bak

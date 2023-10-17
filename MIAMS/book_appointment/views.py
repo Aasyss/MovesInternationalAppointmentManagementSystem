@@ -64,13 +64,13 @@ def book_appointment(request):
                 appointment_id = appointment.id
                 # payment_url = reverse('process_payment', args=[appointment_id, amount])
 
-                # send_appointment_confirmation_email(
-                #     student_email, consultant_email, date,
-                #     appointment_start_time.strftime('%Y-%m-%d %H:%M:%S'),
-                #     appointment_end_time.strftime('%Y-%m-%d %H:%M:%S'),
-                #     student_name=f"{request.user.first_name} {request.user.last_name}",
-                #     consultant_name=f"{consultant.user.first_name} {consultant.user.last_name}"
-                # )
+                send_appointment_confirmation_email(
+                    student_email, consultant_email, date,
+                    appointment_start_time.strftime('%Y-%m-%d %H:%M:%S'),
+                    appointment_end_time.strftime('%Y-%m-%d %H:%M:%S'),
+                    student_name=f"{request.user.first_name} {request.user.last_name}",
+                    consultant_name=f"{consultant.user.first_name} {consultant.user.last_name}"
+                )
 
                 # Set the availability slot as unavailable
                 setattr(availability, f'{day_of_week_name[day_of_week]}_start_time', selected_end_time.time())
@@ -124,7 +124,7 @@ def send_appointment_confirmation_email(student_email, consultant_email, date, s
     send_mail(
         'Appointment Booked',
         student_message,
-        'movesinternationaldemoproject@gmail.com',
+        settings.HOST_EMAIL,
         [student_email],
         fail_silently=False,
         html_message=student_message
@@ -134,7 +134,7 @@ def send_appointment_confirmation_email(student_email, consultant_email, date, s
     send_mail(
         'Appointment Booked',
         consultant_message,
-        'movesinternationaldemoproject@gmail.com',
+        settings.HOST_EMAIL,
         [consultant_email],
         fail_silently=False,
         html_message=consultant_message
