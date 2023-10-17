@@ -47,7 +47,7 @@ GOOGLE_CLIENT_SECRET=
 *Note: For my lecturer, I have provided you another file called 'Environment variables.docx' . This file contains the logins and credentials with secret keys for APIs. follow the following steps please:
 
 1. Create `.env` file inside MIAMS folder.
-2. Please copy the contents of "Environment Variables.docx" file inside `.env` file.
+2. Please Input all the credentials like above inside `.env` file
 
 After that, follow the following steps below:
 ```sh
