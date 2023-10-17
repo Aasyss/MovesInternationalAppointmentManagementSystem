@@ -125,7 +125,7 @@ def send_appointment_confirmation_email(appointment_id):
     send_mail(
         'Appointment Booked',
         student_message,
-        'movesinternationaldemoproject@gmail.com',
+        settings.HOST_EMAIL,
         [student_email],
         fail_silently=False,
         html_message=student_message
@@ -135,7 +135,7 @@ def send_appointment_confirmation_email(appointment_id):
     send_mail(
         'Appointment Booked',
         consultant_message,
-        'movesinternationaldemoproject@gmail.com',
+        settings.HOST_EMAIL,
         [consultant_email],
         fail_silently=False,
         html_message=consultant_message
