@@ -25,7 +25,7 @@ def register(request):
             # Create a UserProfile for the user
             UserProfile.objects.create(user=user)
 
-            login(request, user)
+            login(request, user, backend='allauth.account.auth_backends.AuthenticationBackend')
             role = form.cleaned_data['role']
             if role == 'student':
                 user.groups.add(Group.objects.get(name='student'))

@@ -3,26 +3,6 @@
 {% load static %}
 
 {% block content %}
-    <!--<h1>Review Your Appointment</h1>
-
-    <h2>Appointment Details</h2>
-    <p>Consultant: {{ appointment.consultant }}</p>
-    <p>Date: {{ appointment.appointment_datetime|date:"F j, Y" }}</p>
-    <p>Start Time: {{ appointment.appointment_start_time|time:"g:i A" }}</p>
-    <p>End Time: {{ appointment.appointment_end_time|time:"g:i A" }}</p>
-    <p>Amount: ${{ appointment.amount }}</p>
-    
-    <section class="section">
-        <div class="container">
-            <button class="button is-primary" id="submitBtn">Purchase!</button>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/js/bulma.min.js"></script>
-        <script src="https://js.stripe.com/v3/"></script>
-    <script src="{% static 'payment/js/payment.js' %}"></script>
-    </section>
-
-    {% include "live_chat/partials/chat_bubble.html" %}
-    <script src="{% static 'live_chat/js/live_chat.js' %}" defer></script> -->
 
 <body style="background-color: #CBD5D4; font-family: Arial, sans-serif; margin: 0; padding: 20px;">
 
@@ -44,7 +24,7 @@
 
     <section class="section" style="background-color: #023047; border-radius: 8px; margin-top: 20px;">
         <div class="container" style="text-align: center;">
-            <button class="button is-primary" id="submitBtn" style="background-color: #FB8500; border: none;">Purchase!</button>
+            <button class="button is-primary " id="submitBtn" style="background-color: #FB8500; border: none;">Purchase!</button>
         </div>
     </section>
 

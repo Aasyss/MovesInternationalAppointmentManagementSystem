@@ -29,7 +29,6 @@ def stripe_config(request):
 def checkout(request, appointment_id):
     appointment = get_object_or_404(Appointment, id=appointment_id)
     # Retrieve the amount from the appointment
-    amount = int(appointment.amount * 100)
 
     context = {
                 'appointment': appointment,
@@ -126,7 +125,7 @@ def send_appointment_confirmation_email(appointment_id):
     send_mail(
         'Appointment Booked',
         student_message,
-        settings.HoST_EMAIL,
+        'movesinternationaldemoproject@gmail.com',
         [student_email],
         fail_silently=False,
         html_message=student_message
@@ -136,7 +135,7 @@ def send_appointment_confirmation_email(appointment_id):
     send_mail(
         'Appointment Booked',
         consultant_message,
-        settings.HOST_EMAIL,
+        'movesinternationaldemoproject@gmail.com',
         [consultant_email],
         fail_silently=False,
         html_message=consultant_message
