@@ -1,4 +1,4 @@
-# GoCardless sample application
+# Moves international sample application
 
 ## Setup
 
