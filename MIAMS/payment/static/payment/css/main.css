@@ -171,7 +171,8 @@ padding:15px 20px;
 border-radius:25px;
 background:rgba(255,255,255,.1);
 }
-.login-form .group input[data-type="password"]{
+.login-form .group input[data-type="password"]
+{
 text-security:circle;
 -webkit-text-security:circle;
 }
@@ -253,8 +254,8 @@ text-align:center;
 .sidebar.active {
   left: 0; /* Show sidebar */
 }
-
-// Remy function
+/* 
+// Remy function */
 @function remy($value) {
 @return ($value / 16px) * 1rem;
 }
